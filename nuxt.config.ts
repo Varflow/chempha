@@ -17,12 +17,6 @@ export default defineNuxtConfig({
   },
 
   // @ts-ignore
-
-  image: {
-    dir: 'assets/images',
-  },
-
-  // @ts-ignore
   strapi: {
     url: process.env.STRAPI_URL || 'http://localhost:1337',
     prefix: '/api',

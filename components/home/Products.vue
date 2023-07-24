@@ -42,22 +42,46 @@
       }"
     >
       <swiper-slide>
-        <ProductCard name="EstoGel®Green 40" category="Application" image="/placeholder.png" />
+        <ProductCard
+          name="EstoGel®Green 40"
+          category="Application"
+          image="/images/placeholder.png"
+        />
       </swiper-slide>
       <swiper-slide>
-        <ProductCard name="EstoGel®Green 40" category="Application" image="/placeholder.png" />
+        <ProductCard
+          name="EstoGel®Green 40"
+          category="Application"
+          image="/images/placeholder.png"
+        />
       </swiper-slide>
       <swiper-slide>
-        <ProductCard name="EstoGel®Green 40" category="Application" image="/placeholder.png" />
+        <ProductCard
+          name="EstoGel®Green 40"
+          category="Application"
+          image="/images/placeholder.png"
+        />
       </swiper-slide>
       <swiper-slide>
-        <ProductCard name="EstoGel®Green 40" category="Application" image="/placeholder.png" />
+        <ProductCard
+          name="EstoGel®Green 40"
+          category="Application"
+          image="/images/placeholder.png"
+        />
       </swiper-slide>
       <swiper-slide>
-        <ProductCard name="EstoGel®Green 40" category="Application" image="/placeholder.png" />
+        <ProductCard
+          name="EstoGel®Green 40"
+          category="Application"
+          image="/images/placeholder.png"
+        />
       </swiper-slide>
       <swiper-slide>
-        <ProductCard name="EstoGel®Green 40" category="Application" image="/placeholder.png" />
+        <ProductCard
+          name="EstoGel®Green 40"
+          category="Application"
+          image="/images/placeholder.png"
+        />
       </swiper-slide>
     </swiper>
 
