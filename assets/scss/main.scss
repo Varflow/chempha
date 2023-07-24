@@ -12,8 +12,8 @@
 @import './components/banners/about-banner';
 
 @import './components/buttons/button';
-@import './components/product/card.scss';
-@import './components/post/card.scss';
+@import './components/product/card';
+@import './components/post/card';
 
 @import './components/app/page-banner';
 
@@ -25,8 +25,10 @@
 @import './pages/home/products';
 @import './pages/home/posts';
 
-@import './pages/news/news.scss';
-@import './pages/contact-us/contact-us.scss';
+@import './pages/news/news';
+@import './pages/contact-us/contact-us';
+@import './pages/partners/partners';
+@import './pages/company/company';
 
 * {
   margin: 0;
