@@ -3,6 +3,10 @@
   z-index: 1;
   padding-top: 120px;
 
+  @media screen and (max-width: 768px) {
+    padding-top: 60px;
+  }
+
   &::before {
     content: '';
 
@@ -15,6 +19,10 @@
     height: 100%;
 
     background-color: #fffbf8;
+
+    @media screen and (max-width: 768px) {
+      left: 0;
+    }
   }
 
   &-copyright {
@@ -27,6 +35,11 @@
     font-size: 14px;
     font-weight: normal;
     color: $black;
+
+    @media screen and (max-width: 768px) {
+      padding: 40px 0;
+      margin-top: 40px;
+    }
   }
 
   &-col {

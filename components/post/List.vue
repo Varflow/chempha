@@ -1,6 +1,6 @@
 <template>
   <div class="row">
-    <div class="col-xl-3" v-for="post of posts">
+    <div class="col-lg-4 col-xl-3 gy-5" v-for="post of posts">
       <PostCard
         :title="post.title"
         :category="post.category"

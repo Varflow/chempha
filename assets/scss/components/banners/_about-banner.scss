@@ -16,6 +16,10 @@
     padding: 60px;
     background-color: #f9f2ed;
     text-align: center;
+
+    @media screen and (max-width: 768px) {
+      padding: 40px;
+    }
   }
 
   &__title {
@@ -24,6 +28,14 @@
     font-weight: 600;
     color: $black;
     margin-bottom: 40px;
+
+    @media screen and (max-width: 1024px) {
+      font-size: 48px;
+    }
+
+    @media screen and (max-width: 768px) {
+      font-size: 34px;
+    }
   }
 
   &__subtitle {
@@ -33,6 +45,11 @@
     letter-spacing: 2px;
     text-transform: uppercase;
     color: $black;
+
     margin-bottom: 35px;
+
+    @media screen and (max-width: 768px) {
+      margin-bottom: 24px;
+    }
   }
 }

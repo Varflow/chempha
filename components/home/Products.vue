@@ -31,7 +31,7 @@
 
     <swiper
       :modules="modules"
-      :slides-per-view="4.1"
+      :slides-per-view="1"
       :space-between="20"
       :speed="800"
       @swiper="onSwiper"
@@ -39,6 +39,14 @@
       :navigation="{
         prevEl: prev,
         nextEl: next,
+      }"
+      :breakpoints="{
+        1280: {
+          slidesPerView: 4.1,
+        },
+        768: {
+          slidesPerView: 3.1,
+        },
       }"
     >
       <swiper-slide>

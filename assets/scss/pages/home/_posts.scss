@@ -1,7 +1,11 @@
 .section-posts {
-  // background-color: #e8f5f2;
   .section-header {
     padding: 100px 0 40px 0;
+
+    @media screen and (max-width: 768px) {
+      padding: 0;
+      padding-top: 40px;
+    }
   }
 
   .section-actions {

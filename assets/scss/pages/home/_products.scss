@@ -7,11 +7,22 @@
     align-items: flex-end;
     justify-content: space-between;
     padding: 130px 0;
+
+    @media screen and (max-width: 768px) {
+      padding: 60px 0;
+      flex-direction: column;
+      align-items: flex-start;
+      row-gap: 24px;
+    }
   }
 
   .section-title {
     max-width: 55vw;
     font-weight: 500;
+
+    @media screen and (max-width: 768px) {
+      max-width: 100%;
+    }
   }
 
   .slider-navigation {
@@ -19,6 +30,10 @@
     align-items: center;
 
     column-gap: 8px;
+
+    @media screen and (max-width: 768px) {
+      display: none;
+    }
 
     .slider-prev,
     .slider-next {

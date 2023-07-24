@@ -9,6 +9,10 @@
     height: 80vh;
     cursor: pointer;
 
+    @media screen and (max-width: 768px) {
+      height: 40vh;
+    }
+
     &__image-wrapper {
       position: relative;
       height: 100%;
@@ -41,6 +45,11 @@
       position: absolute;
       top: 40px;
       left: 40px;
+
+      @media screen and (max-width: 768px) {
+        top: 20px;
+        left: 20px;
+      }
     }
 
     &__title {
@@ -50,6 +59,11 @@
       color: $black;
 
       margin-bottom: 18px;
+
+      @media screen and (max-width: 768px) {
+        font-size: 26px;
+        margin-bottom: 12px;
+      }
     }
 
     &__subtitle {

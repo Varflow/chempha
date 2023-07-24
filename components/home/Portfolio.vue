@@ -9,7 +9,7 @@
     </div>
 
     <div class="row g-2 portfolio-list">
-      <div class="col-xl-6 portfolio-card">
+      <div class="col-lg-6 portfolio-card">
         <div class="portfolio-card__image-wrapper">
           <img
             src="/images/banners/portfolio/portfolio-1.jpg"
@@ -35,7 +35,7 @@
           </h4>
         </div>
       </div>
-      <div class="col-xl-6 portfolio-card">
+      <div class="col-lg-6 portfolio-card">
         <div class="portfolio-card__image-wrapper">
           <img
             src="/images/banners/portfolio/portfolio-2.jpg"

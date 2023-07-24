@@ -1,7 +1,7 @@
 <template>
   <footer class="footer container">
-    <div class="row">
-      <div class="col-xl-3">
+    <div class="row gy-5">
+      <div class="col-lg-3">
         <h4 class="footer-col__title">Ingredients</h4>
         <div class="footer-col__list">
           <div class="footer-col__item">Scin Care</div>
@@ -11,7 +11,7 @@
           <div class="footer-col__item">Decorative Cosmetics</div>
         </div>
       </div>
-      <div class="col-xl-3">
+      <div class="col-lg-3">
         <h4 class="footer-col__title">Contact us</h4>
         <div class="footer-col__list">
           <div class="footer-col__item">Chempha OÜ</div>
@@ -21,7 +21,7 @@
           <a href="mailto:info@chempha.com" class="footer-col__item">info@chempha.com</a>
         </div>
       </div>
-      <div class="col-xl-3">
+      <div class="col-lg-3">
         <h4 class="footer-col__title">Application products</h4>
         <div class="footer-col__list">
           <div class="footer-col__item">Actives</div>
@@ -34,7 +34,7 @@
           <div class="footer-col__item">Opacifiers</div>
         </div>
       </div>
-      <div class="col-xl-3">
+      <div class="col-lg-3">
         <h4 class="footer-col__title">News</h4>
       </div>
     </div>

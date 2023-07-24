@@ -36,6 +36,16 @@ $headerHeight: 60px;
       font-size: 60px;
       font-weight: 600;
       color: #fff;
+
+      @media screen and (max-width: 1024px) {
+        max-width: 70vw;
+        font-size: 52px;
+      }
+
+      @media screen and (max-width: 768px) {
+        max-width: 100%;
+        font-size: 32px;
+      }
     }
 
     &__subtitle {
@@ -44,6 +54,11 @@ $headerHeight: 60px;
       font-size: 16px;
       font-weight: 400;
       color: #fff;
+
+      @media screen and (max-width: 768px) {
+        max-width: 100%;
+        font-size: 14px;
+      }
     }
 
     &__image {
@@ -88,6 +103,10 @@ $headerHeight: 60px;
     &:after {
       font-size: 28px;
     }
+
+    @media screen and (max-width: 768px) {
+      display: none;
+    }
   }
 
   .swiper-button-next {
@@ -95,6 +114,10 @@ $headerHeight: 60px;
     color: #fff;
     &:after {
       font-size: 28px;
+    }
+
+    @media screen and (max-width: 768px) {
+      display: none;
     }
   }
 }
