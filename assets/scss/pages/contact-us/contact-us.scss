@@ -1,0 +1,130 @@
+.contact-page {
+  .contact-content {
+    padding: 100px 0;
+
+    .contact-title {
+      font-family: $montserrat;
+      font-size: 42px;
+      font-weight: 500;
+      color: $black;
+
+      margin-bottom: 24px;
+    }
+
+    .contact-title__highlighted {
+      font-family: $montserrat;
+      font-size: 50px;
+      font-weight: 400;
+      color: $black;
+
+      span {
+        color: $accent;
+      }
+    }
+
+    .contact-subtitle {
+      font-family: $dm;
+      font-size: 20px;
+      font-weight: 400;
+      color: $black;
+
+      margin-bottom: 60px;
+    }
+
+    .contact-form {
+      display: flex;
+      flex-direction: column;
+      row-gap: 18px;
+
+      &__row {
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        column-gap: 12px;
+      }
+
+      .form-field {
+        display: flex;
+        flex-direction: column;
+        flex: 1 1 auto;
+        row-gap: 8px;
+
+        font-family: $dm;
+        font-size: 14px;
+        font-weight: 400;
+        color: $black;
+
+        &__input,
+        &__textarea {
+          border: 1px solid #ddd;
+          padding: 16px 12px;
+
+          transition: border-color 0.25s ease;
+
+          &:focus {
+            border-color: $black;
+          }
+        }
+
+        &__textarea {
+          height: 30vh;
+        }
+      }
+    }
+
+    iframe {
+      @media screen and (max-width: 768px) {
+        height: 70vh;
+      }
+    }
+
+    .contact-map {
+      position: relative;
+
+      &-label {
+        position: absolute;
+        top: 0;
+        left: 0;
+
+        display: flex;
+        align-items: flex-start;
+        column-gap: 30px;
+
+        padding: 20px;
+        background-color: #fff;
+      }
+
+      .contact-address {
+        font-family: $dm;
+        font-size: 14px;
+        color: $black;
+
+        a {
+          display: block;
+          margin-top: 8px;
+
+          font-weight: 600;
+          color: $black;
+          text-decoration: none;
+        }
+      }
+
+      .contact-email {
+        &__label {
+          font-family: $dm;
+          font-size: 14px;
+          font-weight: 600;
+          color: #c8c8c8;
+        }
+
+        &__value {
+          font-family: $dm;
+          font-size: 14px;
+          font-weight: 600;
+          color: $black;
+          text-decoration: none;
+        }
+      }
+    }
+  }
+}

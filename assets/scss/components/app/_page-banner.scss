@@ -3,8 +3,10 @@
   height: 40vh;
 
   display: flex;
+  flex-direction: column;
   align-items: center;
   justify-content: center;
+  row-gap: 12px;
 
   position: relative;
   z-index: 1;
@@ -45,10 +47,25 @@
     font-family: $montserrat;
     font-size: 80px;
     font-weight: 600;
-    color: #ef4626;
+    color: $accent;
 
     @media screen and (max-width: 768px) {
       font-size: 48px;
+    }
+  }
+
+  &__subtitle {
+    max-width: 40vw;
+    font-family: $dm;
+    font-size: 16px;
+    font-weight: 400;
+    color: $black;
+    text-align: center;
+
+    @media screen and (max-width: 768px) {
+      max-width: 100%;
+      font-size: 14px;
+      line-height: 18px;
     }
   }
 }

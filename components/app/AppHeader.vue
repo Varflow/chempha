@@ -20,7 +20,7 @@
         <div class="header-menu__link">Application</div>
         <div class="header-menu__link">Partners</div>
         <NuxtLink to="/news" class="header-menu__link">News</NuxtLink>
-        <div class="header-menu__link">Contact Us</div>
+        <NuxtLink to="/contact-us" class="header-menu__link">Contact Us</NuxtLink>
       </div>
     </div>
   </header>
@@ -42,7 +42,7 @@
       <div class="header-menu__link">Application</div>
       <div class="header-menu__link">Partners</div>
       <NuxtLink to="/news" class="header-menu__link">News</NuxtLink>
-      <div class="header-menu__link">Contact Us</div>
+      <NuxtLink to="/contact-us" class="header-menu__link">Contact Us</NuxtLink>
     </div>
   </div>
 </template>
