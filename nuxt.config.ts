@@ -1,7 +1,7 @@
 // https://nuxt.com/docs/api/configuration/nuxt-config
 export default defineNuxtConfig({
   devtools: { enabled: true },
-  modules: ['@nuxtjs/strapi'],
+  modules: ['@nuxtjs/strapi', '@nuxt/image'],
   css: ['~/assets/scss/main.scss'],
   // components: [{ pathPrefix: false }],
 
@@ -14,6 +14,12 @@ export default defineNuxtConfig({
         },
       },
     },
+  },
+
+  // @ts-ignore
+
+  image: {
+    dir: 'assets/images',
   },
 
   // @ts-ignore

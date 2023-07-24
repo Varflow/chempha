@@ -2,7 +2,7 @@
   <div class="container">
     <div class="about-banner row g-0">
       <div class="col-xl-6">
-        <img src="assets/images/banners/about.jpg" alt="" class="about-banner__image" />
+        <nuxt-img src="/banners/about.jpg" alt="" class="about-banner__image" />
       </div>
       <div class="col-xl-6 about-banner__content">
         <h6 class="about-banner__subtitle">About company</h6>

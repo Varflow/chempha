@@ -22,26 +22,26 @@ export default {
         title: 'Innovative Ingredient Improves Skin Hydration',
         category: 'beauty',
         createdAt: '25 АПР 2023',
-        image: 'assets/images/product.jpeg',
+        image: '/product.jpeg',
       },
       {
         title:
           'Personal Care Company Partners with Sustainability Initiative to Promote Eco-Friendly Practices',
         category: 'beauty',
         createdAt: '25 АПР 2023',
-        image: 'assets/images/product.jpeg',
+        image: '/product.jpeg',
       },
       {
         title: 'Innovative Ingredient Improves Skin Hydration',
         category: 'beauty',
         createdAt: '25 АПР 2023',
-        image: 'assets/images/product.jpeg',
+        image: '/product.jpeg',
       },
       {
         title: 'Innovative Ingredient Improves Skin Hydration',
         category: 'beauty',
         createdAt: '25 АПР 2023',
-        image: 'assets/images/product.jpeg',
+        image: '/product.jpeg',
       },
     ];
 

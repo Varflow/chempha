@@ -11,9 +11,9 @@
     <div class="row g-2 portfolio-list">
       <div class="col-xl-6 portfolio-card">
         <div class="portfolio-card__image-wrapper">
-          <img
-            src="assets/images/banners/portfolio/portfolio-1.jpg"
-            alt=""
+          <nuxt-img
+            src="/banners/portfolio/portfolio-1.jpg"
+            alt="Ingredients"
             class="portfolio-card__image"
           />
         </div>
@@ -37,9 +37,9 @@
       </div>
       <div class="col-xl-6 portfolio-card">
         <div class="portfolio-card__image-wrapper">
-          <img
-            src="assets/images/banners/portfolio/portfolio-2.jpg"
-            alt=""
+          <nuxt-img
+            src="/banners/portfolio/portfolio-2.jpg"
+            alt="Application"
             class="portfolio-card__image"
           />
         </div>
