@@ -1,0 +1,35 @@
+@import './fonts';
+@import './grid.css';
+@import './general';
+
+// ---------------
+// Components
+// ---------------
+
+@import './components/app/header';
+@import './components/app/footer';
+@import './components/banners/main-banner';
+@import './components/banners/about-banner';
+
+@import './components/buttons/button';
+@import './components/product/card.scss';
+@import './components/post/card.scss';
+
+// ---------------
+// Pages
+// ---------------
+
+@import './pages/home/portfolio';
+@import './pages/home/products';
+@import './pages/home/posts';
+
+* {
+  margin: 0;
+  padding: 0;
+  outline: none;
+  box-sizing: border-box;
+}
+
+body {
+  overflow-x: hidden;
+}

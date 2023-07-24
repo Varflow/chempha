@@ -1,0 +1,28 @@
+.section-title {
+  font-family: $montserrat;
+  font-size: 42px;
+  font-weight: 600;
+  color: $black;
+}
+
+.section-subtitle {
+  max-width: 40vw;
+  font-family: $dm;
+  font-size: 16px;
+  font-weight: normal;
+  color: $black;
+}
+
+.section-header {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
+  row-gap: 8px;
+}
+
+.section-actions {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
