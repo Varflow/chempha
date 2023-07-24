@@ -2,7 +2,7 @@
   <header class="header container">
     <div class="row align-items-center">
       <div class="col-xl-3">
-        <nuxt-img src="/images/logo.png" alt="" class="header-logo" />
+        <img src="/images/logo.png" alt="" class="header-logo" />
       </div>
       <div class="col-xl-9 justify-content-end header-menu">
         <div class="header-menu__link">Company</div>

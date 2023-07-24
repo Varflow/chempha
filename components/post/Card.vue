@@ -1,7 +1,7 @@
 <template>
   <div class="post-card">
     <div class="post-card__image-wrapper">
-      <nuxt-img :src="image" :alt="title" />
+      <img :src="image" :alt="title" />
     </div>
 
     <div class="post-card__meta">
