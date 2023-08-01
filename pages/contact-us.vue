@@ -13,11 +13,11 @@
 
           <form class="contact-form" @submit.prevent="submit">
             <div class="contact-form__row">
-              <label for="name" class="form-field">
+              <label for="name" class="form-field col-12">
                 Your name*
                 <input class="form-field__input" type="text" id="name" required v-bind="name" />
               </label>
-              <label for="email" class="form-field">
+              <label for="email" class="form-field col-12">
                 Your email*
                 <input class="form-field__input" type="email" id="email" required v-bind="email" />
               </label>
@@ -44,15 +44,17 @@
             </p>
           </div>
 
-          <iframe
-            src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d2028.731435995756!2d24.758015876640776!3d59.43755360235374!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x4692935e18486e35%3A0x268a68b569620c84!2zTmFydmEgbW50IDctNjM0LCAxMDExNyBUYWxsaW5uLCDQrdGB0YLQvtC90LjRjw!5e0!3m2!1sru!2sua!4v1690224073201!5m2!1sru!2sua"
-            width="100%"
-            height="100%"
-            style="border: 0"
-            allowfullscreen=""
-            loading="lazy"
-            referrerpolicy="no-referrer-when-downgrade"
-          ></iframe>
+          <div class="contact-map-wrapper">
+            <iframe
+              src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d2028.731435995756!2d24.758015876640776!3d59.43755360235374!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x4692935e18486e35%3A0x268a68b569620c84!2zTmFydmEgbW50IDctNjM0LCAxMDExNyBUYWxsaW5uLCDQrdGB0YLQvtC90LjRjw!5e0!3m2!1sru!2sua!4v1690224073201!5m2!1sru!2sua"
+              width="100%"
+              height="100%"
+              style="border: 0"
+              allowfullscreen=""
+              loading="lazy"
+              referrerpolicy="no-referrer-when-downgrade"
+            ></iframe>
+          </div>
         </div>
       </div>
     </div>

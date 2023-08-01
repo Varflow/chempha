@@ -17,7 +17,9 @@
           care applications
         </h3>
         <div class="main-banner__actions">
-          <AppButton variant="white"> Explore products </AppButton>
+          <NuxtLink to="/products" class="link-without-decoration">
+            <AppButton variant="white"> Explore products </AppButton>
+          </NuxtLink>
         </div>
       </div>
     </swiper-slide>
@@ -27,7 +29,9 @@
         <h2 class="main-banner__title">High performance and sustainable ingredients</h2>
 
         <div class="main-banner__actions">
-          <AppButton variant="white"> Explore products </AppButton>
+          <NuxtLink to="/products" class="link-without-decoration">
+            <AppButton variant="white"> Explore products </AppButton>
+          </NuxtLink>
         </div>
       </div>
     </swiper-slide>
@@ -37,7 +41,9 @@
         <h2 class="main-banner__title">Comprehensive technical support</h2>
 
         <div class="main-banner__actions">
-          <AppButton variant="white">See more</AppButton>
+          <NuxtLink to="/products" class="link-without-decoration">
+            <AppButton variant="white"> Explore products </AppButton>
+          </NuxtLink>
         </div>
       </div>
     </swiper-slide>

@@ -66,4 +66,21 @@
       }
     }
   }
+
+  &--black.button--filled {
+    color: #fff;
+    background-color: $black;
+    border: 1px solid $black;
+
+    &:before {
+      background-color: #fff;
+    }
+
+    &:hover {
+      color: $black;
+      &::before {
+        width: 100%;
+      }
+    }
+  }
 }

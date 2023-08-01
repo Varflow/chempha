@@ -5,49 +5,13 @@
         <h2 class="section-title">Chempha news</h2>
       </div>
 
-      <PostList :posts="posts" />
+      <PostList :limit="4" />
 
       <div class="section-actions">
-        <AppButton variant="black">View all news</AppButton>
+        <NuxtLink to="/posts" class="link-without-decoration">
+          <AppButton variant="black">View all news</AppButton>
+        </NuxtLink>
       </div>
     </div>
   </div>
 </template>
-
-<script>
-export default {
-  setup() {
-    const posts = [
-      {
-        title: 'Innovative Ingredient Improves Skin Hydration',
-        category: 'beauty',
-        createdAt: '25 АПР 2023',
-        image: '/images/product.jpeg',
-      },
-      {
-        title:
-          'Personal Care Company Partners with Sustainability Initiative to Promote Eco-Friendly Practices',
-        category: 'beauty',
-        createdAt: '25 АПР 2023',
-        image: '/images/product.jpeg',
-      },
-      {
-        title: 'Innovative Ingredient Improves Skin Hydration',
-        category: 'beauty',
-        createdAt: '25 АПР 2023',
-        image: '/images/product.jpeg',
-      },
-      {
-        title: 'Innovative Ingredient Improves Skin Hydration',
-        category: 'beauty',
-        createdAt: '25 АПР 2023',
-        image: '/images/product.jpeg',
-      },
-    ];
-
-    return {
-      posts,
-    };
-  },
-};
-</script>

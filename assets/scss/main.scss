@@ -16,6 +16,7 @@
 @import './components/post/card';
 
 @import './components/app/page-banner';
+@import './components/app/modal';
 
 // ---------------
 // Pages
@@ -29,12 +30,16 @@
 @import './pages/contact-us/contact-us';
 @import './pages/partners/partners';
 @import './pages/company/company';
+@import './pages/category/category';
+@import './pages/product/product';
+@import './pages/posts/posts';
 
 * {
   margin: 0;
   padding: 0;
   outline: none;
   box-sizing: border-box;
+  -webkit-tap-highlight-color: transparent;
 }
 
 body {

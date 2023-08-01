@@ -1,5 +1,5 @@
 <template>
-  <div class="section-products">
+  <div class="section-products" v-if="productsForView">
     <div class="container">
       <div class="section-products__header">
         <h3 class="section-title">
@@ -49,52 +49,20 @@
         },
       }"
     >
-      <swiper-slide>
+      <swiper-slide v-for="product of productsForView">
         <ProductCard
-          name="EstoGel®Green 40"
-          category="Application"
-          image="/images/placeholder.png"
-        />
-      </swiper-slide>
-      <swiper-slide>
-        <ProductCard
-          name="EstoGel®Green 40"
-          category="Application"
-          image="/images/placeholder.png"
-        />
-      </swiper-slide>
-      <swiper-slide>
-        <ProductCard
-          name="EstoGel®Green 40"
-          category="Application"
-          image="/images/placeholder.png"
-        />
-      </swiper-slide>
-      <swiper-slide>
-        <ProductCard
-          name="EstoGel®Green 40"
-          category="Application"
-          image="/images/placeholder.png"
-        />
-      </swiper-slide>
-      <swiper-slide>
-        <ProductCard
-          name="EstoGel®Green 40"
-          category="Application"
-          image="/images/placeholder.png"
-        />
-      </swiper-slide>
-      <swiper-slide>
-        <ProductCard
-          name="EstoGel®Green 40"
-          category="Application"
-          image="/images/placeholder.png"
+          :id="product.id"
+          :name="product.name"
+          :category="product.category"
+          :image="`${media}${product.image.url}`"
         />
       </swiper-slide>
     </swiper>
 
     <div class="section-products__actions">
-      <AppButton variant="black"> View All Products </AppButton>
+      <NuxtLink to="/products" class="link-without-decoration">
+        <AppButton variant="black"> View All Products </AppButton>
+      </NuxtLink>
     </div>
   </div>
 </template>
@@ -114,12 +82,32 @@ export default {
     SwiperSlide,
   },
 
-  setup() {
-    const modules = [Navigation];
-    const prev = ref(null);
-    const next = ref(null);
+  async setup() {
+    try {
+      const modules = [Navigation];
+      const prev = ref(null);
+      const next = ref(null);
 
-    return { modules, prev, next };
+      const media = useStrapiMedia();
+      const { find } = useStrapi();
+
+      const products = await find('tovaries', { populate: '*', pagination: { limit: 10 } });
+
+      console.log(products);
+
+      const productsForView = products.data.map((product) => {
+        return {
+          id: product.id,
+          image: product.attributes.image.data.attributes,
+          name: product.attributes.name,
+          category: product.attributes.pod_kategoriya.data.attributes.name,
+        };
+      });
+
+      return { modules, prev, next, productsForView, media };
+    } catch (error) {
+      console.log(error);
+    }
   },
 };
 </script>

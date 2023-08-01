@@ -9,42 +9,18 @@
         </div>
       </div>
       <div class="col-6 col-lg-3">
-        <NuxtLink to="/">
+        <NuxtLink @click="close" to="/">
           <img src="/images/logo.png" alt="" class="header-logo" />
         </NuxtLink>
       </div>
       <div class="col-3 d-flex d-lg-none"></div>
       <div class="d-none d-lg-flex col-lg-9 justify-content-end header-menu">
-        <NuxtLink to="/company" class="header-menu__link">Company</NuxtLink>
-        <div class="header-menu__link">Ingredients</div>
-        <div class="header-menu__link">Application</div>
-        <NuxtLink to="/partners" class="header-menu__link">Partners</NuxtLink>
-        <NuxtLink to="/news" class="header-menu__link">News</NuxtLink>
-        <NuxtLink to="/contact-us" class="header-menu__link">Contact Us</NuxtLink>
+        <AppMenu />
       </div>
     </div>
   </header>
 
-  <div class="header-mobile d-block d-lg-none" :class="{ active: mobileMenuOpened }">
-    <div class="header-mobile__header">
-      <NuxtLink to="/">
-        <img src="/images/logo.png" alt="" class="header-logo" />
-      </NuxtLink>
-      <div class="header-mobile__btn header-mobile-close" @click="close">
-        <div class="line"></div>
-        <div class="line"></div>
-      </div>
-    </div>
-
-    <div class="header-mobile__menu">
-      <NuxtLink to="/company" class="header-menu__link">Company</NuxtLink>
-      <div class="header-menu__link">Ingredients</div>
-      <div class="header-menu__link">Application</div>
-      <NuxtLink to="/partners" class="header-menu__link">Partners</NuxtLink>
-      <NuxtLink to="/news" class="header-menu__link">News</NuxtLink>
-      <NuxtLink to="/contact-us" class="header-menu__link">Contact Us</NuxtLink>
-    </div>
-  </div>
+  <AppMobileMenu @close="close" :opened="mobileMenuOpened" />
 </template>
 
 <script>

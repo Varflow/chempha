@@ -1,0 +1,63 @@
+.post-page {
+  padding: 60px 0;
+  @media screen and (max-width: 786px) {
+    padding: 40px 0;
+  }
+  &__image {
+    width: 100%;
+    height: 70vh;
+
+    overflow: hidden;
+
+    @media screen and (max-width: 786px) {
+      height: 45vh;
+    }
+
+    img {
+      width: 100%;
+      object-fit: cover;
+    }
+  }
+
+  &__meta {
+    display: flex;
+    align-items: center;
+    column-gap: 8px;
+
+    padding: 14px 0;
+
+    font-family: $dm;
+    font-size: 14px;
+    font-weight: 500;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+  }
+
+  &__title {
+    max-width: 70vw;
+
+    font-family: $montserrat;
+    font-size: 42px;
+    font-weight: 600;
+    color: $black;
+
+    margin-bottom: 24px;
+
+    @media screen and (max-width: 768px) {
+      max-width: 100%;
+      font-size: 24px;
+    }
+  }
+
+  &__text {
+    font-family: $dm;
+    font-size: 16px;
+    font-weight: 400;
+    color: rgba($black, 0.6);
+    line-height: 24px;
+
+    ul {
+      margin-inline-start: 20px;
+    }
+  }
+}

@@ -3,7 +3,10 @@ export default defineNuxtConfig({
   devtools: { enabled: true },
   modules: ['@nuxtjs/strapi', '@nuxt/image'],
   css: ['~/assets/scss/main.scss'],
-  // components: [{ pathPrefix: false }],
+
+  app: {
+    pageTransition: { name: 'page', mode: 'out-in' },
+  },
 
   vite: {
     css: {
@@ -19,9 +22,5 @@ export default defineNuxtConfig({
   // @ts-ignore
   strapi: {
     url: process.env.STRAPI_URL || 'http://localhost:1337',
-    prefix: '/api',
-    version: 'v4',
-    cookie: {},
-    cookieName: 'strapi_jwt',
   },
 });

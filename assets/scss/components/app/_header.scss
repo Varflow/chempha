@@ -5,13 +5,19 @@
   &-logo {
     max-width: 168px;
   }
+}
 
+// Categories Start
+
+.header {
   &-menu {
     display: flex;
     align-items: center;
     column-gap: 40px;
 
     &__link {
+      position: relative;
+
       font-family: $dm;
       font-size: 14px;
       font-weight: normal;
@@ -23,10 +29,74 @@
 
       &:hover {
         color: $accent;
+
+        & > .header-menu-dropdown {
+          opacity: 1;
+          visibility: visible;
+        }
       }
+
+      &-label {
+        display: flex;
+        align-items: center;
+        column-gap: 8px;
+
+        svg {
+          width: 14px;
+          height: 14px;
+
+          will-change: transform;
+          transition: transform 0.5s ease;
+        }
+      }
+    }
+
+    &-dropdown {
+      position: absolute;
+      z-index: 2;
+
+      display: flex;
+      flex-direction: column;
+      visibility: hidden;
+
+      min-width: 18vw;
+
+      padding: 22px 0;
+      background-color: #fff;
+      box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+      border-radius: 4px;
+
+      opacity: 0;
+      transition: all 0.25s cubic-bezier(0.645, 0.045, 0.355, 1);
+    }
+
+    &-categories {
+      top: calc(100%);
+      left: 0;
+
+      .header-menu__link {
+        padding: 10px 30px;
+
+        &-label {
+          display: flex;
+          align-items: center;
+          justify-content: space-between;
+
+          svg {
+            transform: rotate(-90deg);
+          }
+        }
+      }
+    }
+
+    &-subcategories {
+      top: 0;
+      left: 100%;
     }
   }
 }
+
+// Categories End
 
 .header-mobile__btn {
   width: 26px;
@@ -94,6 +164,74 @@
       font-size: 18px;
       padding: 20px 0;
       border-bottom: 1px solid rgba($black, 0.05);
+
+      &-label {
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        width: 100%;
+      }
     }
+  }
+
+  .header-menu-categories {
+    position: relative;
+    left: initial;
+    top: initial;
+    box-shadow: none;
+    padding-left: 12px;
+
+    visibility: visible;
+    display: none;
+
+    animation: collapse 500ms ease-in-out both;
+
+    &.active {
+      display: flex;
+      animation: expand 500ms ease-in-out both;
+
+      svg {
+        transform: rotate(360deg);
+      }
+    }
+  }
+
+  .header-menu-subcategories {
+    position: relative;
+    left: initial;
+    top: initial;
+    z-index: -2;
+    box-shadow: none;
+    padding-left: 12px;
+
+    visibility: visible;
+    display: none;
+
+    animation: collapse 500ms ease-in-out both;
+
+    &.active {
+      display: flex;
+      z-index: 2;
+
+      animation: expand 500ms ease-in-out both;
+    }
+  }
+}
+
+@keyframes expand {
+  0% {
+    opacity: 0;
+  }
+  100% {
+    opacity: 1;
+  }
+}
+
+@keyframes collapse {
+  0% {
+    opacity: 1;
+  }
+  100% {
+    opacity: 0;
   }
 }

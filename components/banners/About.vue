@@ -8,7 +8,9 @@
         <h6 class="about-banner__subtitle">About company</h6>
         <h2 class="about-banner__title">Ingredient solutions for Personal care & Cosmetics</h2>
         <div class="about-banner__actions">
-          <AppButton variant="black">Read more</AppButton>
+          <NuxtLink to="/company" class="link-without-decoration">
+            <AppButton variant="black">Read more</AppButton>
+          </NuxtLink>
         </div>
       </div>
     </div>
