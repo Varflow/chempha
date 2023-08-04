@@ -1,5 +1,9 @@
 <template>
   <div class="contact-page">
+    <Head>
+      <Title>Chempha Contact Us</Title>
+      <Meta name="og:title" content="Chempha Contact Us" />
+    </Head>
     <div class="container">
       <AppPageBanner
         title="Contact us"
@@ -15,16 +19,32 @@
             <div class="contact-form__row">
               <label for="name" class="form-field col-12">
                 Your name*
-                <input class="form-field__input" type="text" id="name" required v-bind="name" />
+                <input
+                  class="form-field__input"
+                  type="text"
+                  id="name"
+                  required
+                  v-bind="name"
+                />
               </label>
               <label for="email" class="form-field col-12">
                 Your email*
-                <input class="form-field__input" type="email" id="email" required v-bind="email" />
+                <input
+                  class="form-field__input"
+                  type="email"
+                  id="email"
+                  required
+                  v-bind="email"
+                />
               </label>
             </div>
             <label for="message" class="form-field">
               Your message
-              <textarea id="message" v-bind="message" class="form-field__textarea" />
+              <textarea
+                id="message"
+                v-bind="message"
+                class="form-field__textarea"
+              />
             </label>
             <div class="contact-form__actions">
               <AppButton variant="black">Send message</AppButton>
@@ -40,7 +60,9 @@
             </p>
             <p class="contact-email">
               <span class="contact-email__label">EMAIL</span><br />
-              <a href="mailto:info@chempha.com" class="contact-email__value">info@chempha.com</a>
+              <a href="mailto:info@chempha.com" class="contact-email__value"
+                >info@chempha.com</a
+              >
             </p>
           </div>
 
@@ -65,9 +87,9 @@
 export default {
   data() {
     return {
-      name: '',
-      email: '',
-      message: '',
+      name: "",
+      email: "",
+      message: "",
     };
   },
 

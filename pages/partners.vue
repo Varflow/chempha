@@ -1,5 +1,9 @@
 <template>
   <div class="partners-page">
+    <Head>
+      <Title>Chempha Partners</Title>
+      <Meta name="og:title" content="Chempha Partners" />
+    </Head>
     <div class="container">
       <AppPageBanner img="/images/banners/partner.jpg" title="Partners" />
 
@@ -19,13 +23,13 @@
 export default {
   setup() {
     const partners = [
-      '/images/partners/partner-1.jpg',
-      '/images/partners/partner-2.jpg',
-      '/images/partners/partner-3.jpg',
-      '/images/partners/partner-4.jpg',
-      '/images/partners/partner-5.jpg',
-      '/images/partners/partner-6.jpg',
-      '/images/partners/partner-7.jpg',
+      "/images/partners/partner-1.jpg",
+      "/images/partners/partner-2.jpg",
+      "/images/partners/partner-3.jpg",
+      "/images/partners/partner-4.jpg",
+      "/images/partners/partner-5.jpg",
+      "/images/partners/partner-6.jpg",
+      "/images/partners/partner-7.jpg",
     ];
 
     return {

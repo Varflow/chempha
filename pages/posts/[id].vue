@@ -1,5 +1,18 @@
 <template>
   <div class="post-page" v-if="postForView">
+    <Head>
+      <Title>Chempha - {{ postForView?.title }}</Title>
+      <Meta
+        name="description"
+        :content="postForView?.text?.substring(0, 100)"
+      />
+      <Meta name="og:title" :content="`Chempha - ${postForView?.title}`" />
+      <Meta
+        name="og:description"
+        :content="postForView?.text?.substring(0, 100)"
+      />
+      <Meta name="og:image" :content="`${media}${postForView?.image.url}`" />
+    </Head>
     <div class="container">
       <div class="col-12 col-lg-10 offset-lg-1">
         <div class="post-page__image">
@@ -23,11 +36,13 @@ export default {
 
       const id = route.params.id;
 
-      const post = await findOne('novostis', id, { populate: '*' });
+      const post = await findOne("novostis", id, { populate: "*" });
 
       const postForView = {
         ...post.data.attributes,
-        createdAt: new Date(post.data.attributes.createdAt).toLocaleDateString(),
+        createdAt: new Date(
+          post.data.attributes.createdAt
+        ).toLocaleDateString(),
         image: post.data.attributes?.image.data.attributes,
       };
 

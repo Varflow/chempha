@@ -41,7 +41,7 @@ export default {
       const { findOne } = useStrapi();
 
       const id = route.params.id;
-      const category = await findOne("categories", id, {
+      const category = await findOne("pod-kategoriyas", id, {
         populate: {
           image: "*",
           tovaries: {
@@ -50,17 +50,16 @@ export default {
         },
       });
 
-      console.log(category.data.attributes);
       const products = category.data.attributes.tovaries.data.map((product) => {
         return {
           ...product.attributes,
           id: product.id,
-          category: product.attributes.pod_kategoriya.data.attributes.Name,
+          category: product.attributes.pod_kategoriya.data.attributes.name,
           image: product.attributes.image.data?.attributes,
         };
       });
 
-      const title = category.data.attributes.Name;
+      const title = category.data.attributes.name;
       const categoryBanner = category.data.attributes.image.data?.attributes;
 
       this.loading = false;
