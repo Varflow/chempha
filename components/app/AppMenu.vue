@@ -1,7 +1,7 @@
 <template>
   <NuxtLink to="/company" class="header-menu__link">Company</NuxtLink>
   <div class="header-menu__link" v-if="ingredientsForView">
-    <NuxtLink to="ingredients">
+    <NuxtLink to="/ingredients">
       <div class="header-menu__link-label">
         Ingredients
         <svg
