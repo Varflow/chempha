@@ -14,7 +14,7 @@
             :id="product.id"
             :name="product.name"
             :category="product.category"
-            :image="`${media}${product.image.url}`"
+            :image="`${media}${product.image?.url}`"
           />
         </div>
       </div>
