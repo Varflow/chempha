@@ -63,7 +63,7 @@ export default {
 
       const productForView = {
         ...product.data.attributes,
-        image: product.data.attributes?.image.data.attributes,
+        image: product.data.attributes?.image.data?.attributes,
       };
 
       return {

@@ -43,7 +43,7 @@ export default {
         createdAt: new Date(
           post.data.attributes.createdAt
         ).toLocaleDateString(),
-        image: post.data.attributes?.image.data.attributes,
+        image: post.data.attributes?.image.data?.attributes,
       };
 
       return {
