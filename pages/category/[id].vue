@@ -50,12 +50,11 @@ export default {
         },
       });
 
-      console.log(category.data.attributes);
       const products = category.data.attributes.tovaries.data.map((product) => {
         return {
           ...product.attributes,
           id: product.id,
-          category: product.attributes.pod_kategoriya.data.attributes.Name,
+          category: product.attributes.pod_kategoriya.data?.attributes.Name,
           image: product.attributes.image.data?.attributes,
         };
       });

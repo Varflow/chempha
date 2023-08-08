@@ -23,15 +23,15 @@ export default {
       const media = useStrapiMedia();
       const { find } = useStrapi();
 
-      const products = await find('tovaries', {
-        populate: '*',
+      const products = await find("tovaries", {
+        populate: "*",
       });
 
       const productsForView = products.data.map((product) => {
         return {
           ...product.attributes,
           id: product.id,
-          category: product.attributes.pod_kategoriya.data.attributes.name,
+          category: product.attributes.pod_kategoriya?.data.attributes.name,
           image: product.attributes.image.data?.attributes,
         };
       });

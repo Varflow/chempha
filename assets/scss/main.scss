@@ -1,38 +1,39 @@
-@import './fonts';
-@import './grid.css';
-@import './general';
+@import "./fonts";
+@import "./grid.css";
+@import "./general";
 
 // ---------------
 // Components
 // ---------------
 
-@import './components/app/header';
-@import './components/app/footer';
-@import './components/banners/main-banner';
-@import './components/banners/about-banner';
+@import "./components/app/header";
+@import "./components/app/footer";
+@import "./components/banners/main-banner";
+@import "./components/banners/about-banner";
 
-@import './components/buttons/button';
-@import './components/product/card';
-@import './components/post/card';
+@import "./components/buttons/button";
+@import "./components/product/card";
+@import "./components/post/card";
 
-@import './components/app/page-banner';
-@import './components/app/modal';
+@import "./components/app/page-banner";
+@import "./components/app/modal";
+@import "./components/category/card.scss";
 
 // ---------------
 // Pages
 // ---------------
 
-@import './pages/home/portfolio';
-@import './pages/home/products';
-@import './pages/home/posts';
+@import "./pages/home/portfolio";
+@import "./pages/home/products";
+@import "./pages/home/posts";
 
-@import './pages/news/news';
-@import './pages/contact-us/contact-us';
-@import './pages/partners/partners';
-@import './pages/company/company';
-@import './pages/category/category';
-@import './pages/product/product';
-@import './pages/posts/posts';
+@import "./pages/news/news";
+@import "./pages/contact-us/contact-us";
+@import "./pages/partners/partners";
+@import "./pages/company/company";
+@import "./pages/category/category";
+@import "./pages/product/product";
+@import "./pages/posts/posts";
 
 * {
   margin: 0;
