@@ -5,13 +5,16 @@
       <Meta name="description" :content="productForView?.excert" />
       <Meta name="og:title" :content="`Chempha -${productForView?.name}`" />
       <Meta name="og:description" :content="productForView?.excert" />
-      <Meta name="og:image" :content="`${media}${productForView?.image.url}`" />
+      <Meta
+        name="og:image"
+        :content="`${media}${productForView?.image?.url}`"
+      />
     </Head>
     <div class="product-page" v-if="productForView">
       <div class="row product-page__header">
         <div class="col-12 col-lg-6 product-page__image">
           <img
-            :src="`${media}${productForView.image.url}`"
+            :src="`${media}${productForView.image?.url}`"
             :alt="productForView.name"
           />
         </div>
