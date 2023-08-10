@@ -19,7 +19,11 @@
         <h4 class="footer-col__title">Ingredients</h4>
         <div class="footer-col__list">
           <NuxtLink
-            :to="`/ingredients/${category.id}`"
+            :to="
+              Boolean(category.children?.length)
+                ? `/ingredients/${category.id}`
+                : `/category/${category.id}`
+            "
             class="footer-col__item"
             v-for="category of ingredientsForView"
             >{{ category.name }}</NuxtLink
@@ -31,7 +35,11 @@
         <h4 class="footer-col__title">Application products</h4>
         <div class="footer-col__list">
           <NuxtLink
-            :to="`/category/${category.id}`"
+            :to="
+              Boolean(category.children?.length)
+                ? `/applications/${category.id}`
+                : `/category/${category.id}`
+            "
             class="footer-col__item"
             v-for="category of applicationsForView"
             >{{ category.name }}</NuxtLink
@@ -56,6 +64,14 @@ const toView = (collection) => {
     return {
       id: collection.id,
       name: collection.attributes.Name,
+      children: !collection.attributes.pod_kategoriyas?.data.length
+        ? null
+        : collection.attributes.pod_kategoriyas?.data.map((subcategory) => {
+            return {
+              id: subcategory.id,
+              name: subcategory.attributes.name,
+            };
+          }),
     };
   });
 };
