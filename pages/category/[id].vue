@@ -54,7 +54,7 @@ export default {
         return {
           ...product.attributes,
           id: product.id,
-          category: product.attributes.pod_kategoriya.data?.attributes.Name,
+          category: product.attributes.pod_kategoriya?.data?.attributes.Name,
           image: product.attributes.image.data?.attributes,
         };
       });
