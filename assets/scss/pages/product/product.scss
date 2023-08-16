@@ -84,5 +84,15 @@
     ul {
       margin-inline-start: 20px;
     }
+
+    table {
+      width: 100%;
+      border-collapse: collapse;
+
+      td {
+        border: 1px solid #dee2e6;
+        padding: 6px;
+      }
+    }
   }
 }
