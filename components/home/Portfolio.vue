@@ -3,8 +3,10 @@
     <div class="section-header">
       <h3 class="section-title">Product Portfolio</h3>
       <h4 class="section-subtitle">
-        From harnessing the power of plant stem cells to developing exceptional
-        personal care active ingredients
+        From clinically substantiated plant stem cells, peptides, extracts,
+        fermented oils and other actives up to sustainable silicone alternatives
+        and multifunctional polymers with unique characteristics and unusual
+        behaviour in formulations
       </h4>
     </div>
 

@@ -73,20 +73,25 @@
             sustainable solutions that are safe for both the environment and
             people.
           </p>
+          <br />
           <p class="company-content__text">
             <b>Core values</b><br />
             <b>Integrity</b>. We are committed to honest, open and
             professionally respectful interaction and pursue the truth in our
-            business endeavors. <b>Commitment to customers</b>. Exceeding our
-            customers’ needs and expectations in all aspects of the product and
-            related service is our primary responsibility.
+            business endeavors.
+            <br />
+            <b>Commitment to customers</b>. Exceeding our customers’ needs and
+            expectations in all aspects of the product and related service is
+            our primary responsibility.
+            <br />
             <b>Green chemistry</b>. We recognize our responsibility to
             contribute to a more sustainable world providing environmentally
-            friendly chemical solutions. <b>Teamwork</b>. The strength of our
-            team is not only in expertise and experience but also in our ability
-            to trust each other. Meeting our goals is not achieved by
-            individuals but by supporting each other and enjoying cooperation as
-            a team.
+            friendly chemical solutions.
+            <br />
+            <b>Teamwork</b>. The strength of our team is not only in expertise
+            and experience but also in our ability to trust each other. Meeting
+            our goals is not achieved by individuals but by supporting each
+            other and enjoying cooperation as a team.
           </p>
         </div>
       </div>

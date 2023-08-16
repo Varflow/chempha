@@ -15,7 +15,7 @@ $headerHeight: 60px;
     text-align: center;
 
     &:before {
-      content: '';
+      content: "";
 
       position: absolute;
       top: 0;
@@ -29,7 +29,7 @@ $headerHeight: 60px;
     }
 
     &__title {
-      max-width: 52vw;
+      max-width: 70vw;
       margin-bottom: 28px;
 
       font-family: $montserrat;

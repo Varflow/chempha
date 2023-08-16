@@ -8,16 +8,20 @@
 
 @import "./components/app/header";
 @import "./components/app/footer";
-@import "./components/banners/main-banner";
-@import "./components/banners/about-banner";
-
-@import "./components/buttons/button";
-@import "./components/product/card";
-@import "./components/post/card";
-
 @import "./components/app/page-banner";
 @import "./components/app/modal";
+@import "./components/app/success-modal";
+@import "./components/app/error-modal";
+@import "./components/app/pagination";
+
 @import "./components/category/card.scss";
+
+@import "./components/banners/main-banner";
+@import "./components/banners/about-banner";
+@import "./components/buttons/button";
+
+@import "./components/product/card";
+@import "./components/post/card";
 
 // ---------------
 // Pages

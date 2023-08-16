@@ -3,5 +3,8 @@
     <AppHeader />
     <slot />
     <AppFooter />
+
+    <AppSuccessModal />
+    <AppErrorModal />
   </div>
 </template>

@@ -24,7 +24,7 @@
                   type="text"
                   id="name"
                   required
-                  v-bind="name"
+                  v-model="name"
                 />
               </label>
               <label for="email" class="form-field col-12">
@@ -34,7 +34,7 @@
                   type="email"
                   id="email"
                   required
-                  v-bind="email"
+                  v-model="email"
                 />
               </label>
             </div>
@@ -42,7 +42,7 @@
               Your message
               <textarea
                 id="message"
-                v-bind="message"
+                v-model="message"
                 class="form-field__textarea"
               />
             </label>
@@ -54,6 +54,7 @@
         <div class="col-12 col-lg-6 contact-map">
           <div class="contact-map-label">
             <p class="contact-address">
+              <b>Chempha OÜ</b> <br />
               Narva mnt 7-634 <br />
               10117 Tallinn, Estonia<br />
               <a href="tel:+372 712 2708">Tel. +372 712 2708</a><br />
@@ -84,6 +85,7 @@
 </template>
 
 <script>
+import Micromodal from "micromodal";
 export default {
   data() {
     return {
@@ -94,7 +96,37 @@ export default {
   },
 
   methods: {
-    submit() {},
+    async submit() {
+      try {
+        const client = useStrapiClient();
+        const config = useRuntimeConfig();
+
+        const formData = this.$data;
+
+        await client("/email", {
+          method: "POST",
+          body: {
+            to: config.public.mailTo,
+            subject: "Application from site (Contact Us)",
+            html: `
+            <p><b>Name</b>: ${formData.name}</p>
+            <p><b>Email</b>: ${formData.email}</p>
+            <p><b>Message</b>: ${formData.message}</p>
+          `,
+          },
+        });
+
+        Micromodal.show("success-modal");
+        setTimeout(() => {
+          Micromodal.close("success-modal");
+        }, 5000);
+      } catch (error) {
+        Micromodal.show("error-modal");
+        setTimeout(() => {
+          Micromodal.close("error-modal");
+        }, 5000);
+      }
+    },
   },
 };
 </script>

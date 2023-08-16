@@ -26,7 +26,7 @@
               variant="black"
               appearence="filled"
               @click="openSubmitModal"
-              >Submit an application</AppButton
+              >Sample request</AppButton
             >
           </div>
         </div>

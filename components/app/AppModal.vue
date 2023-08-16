@@ -10,7 +10,12 @@
         >
           <header class="modal__header">
             <h2 class="modal__title" :id="`${id}-title`">{{ title }}</h2>
-            <button class="modal__close" aria-label="Close modal" data-micromodal-close></button>
+            <button
+              class="modal__close"
+              aria-label="Close modal"
+              data-micromodal-close
+              v-if="hasCloseButton"
+            ></button>
           </header>
           <main class="modal__content" :id="`${id}-content`">
             <slot />
@@ -22,10 +27,22 @@
 </template>
 
 <script>
-import Micromodal from 'micromodal';
+import Micromodal from "micromodal";
 
 export default {
-  props: ['id', 'title'],
+  props: {
+    id: {
+      type: String,
+    },
+    title: {
+      type: String,
+    },
+    hasCloseButton: {
+      type: Boolean,
+      required: false,
+      default: true,
+    },
+  },
 
   mounted() {
     Micromodal.init();

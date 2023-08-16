@@ -3,8 +3,8 @@
     <div class="container">
       <div class="section-products__header">
         <h3 class="section-title">
-          Сonvergence of experience, science and nature for distribution in
-          Personal Care and Cosmetics
+          We are committed to provide you with highly efficient and sustainable
+          solutions that are safe for both the environment and people
         </h3>
         <div class="slider-navigation">
           <div class="slider-prev" ref="prev">

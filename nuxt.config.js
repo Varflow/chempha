@@ -3,6 +3,11 @@
 import axios from "axios";
 
 export default defineNuxtConfig({
+  runtimeConfig: {
+    public: {
+      mailTo: process.env.MAIL_TO,
+    },
+  },
   site: {
     url: process.env.NUXT_PUBLIC_SITE_URL,
   },

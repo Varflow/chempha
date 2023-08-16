@@ -10,8 +10,8 @@
       <div class="section-header">
         <h2 class="section-title">Our partners</h2>
       </div>
-      <div class="partners-list">
-        <div class="partner-item" v-for="partner of partners">
+      <div class="row partners-list gy-5">
+        <div class="col-12 col-lg-4 partner-item" v-for="partner of partners">
           <img :src="partner" alt="" />
         </div>
       </div>
@@ -26,7 +26,6 @@ export default {
       "/images/partners/partner-1.jpg",
       "/images/partners/partner-2.jpg",
       "/images/partners/partner-3.jpg",
-      "/images/partners/partner-4.jpg",
       "/images/partners/partner-5.jpg",
       "/images/partners/partner-6.jpg",
       "/images/partners/partner-7.jpg",

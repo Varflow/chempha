@@ -10,19 +10,21 @@
       <h4 class="product-card__name">{{ name }}</h4>
     </NuxtLink>
     <div class="product-card__actions">
-      <AppButton variant="black" @click="openSubmitModal">Submit an application</AppButton>
+      <AppButton variant="black" @click="openSubmitModal"
+        >Sample request</AppButton
+      >
     </div>
   </div>
-  <ProductSubmitModal />
+  <ProductSubmitModal :title="name" />
 </template>
 
 <script>
-import Micromodal from 'micromodal';
+import Micromodal from "micromodal";
 export default {
-  props: ['id', 'name', 'category', 'image'],
+  props: ["id", "name", "category", "image"],
   methods: {
     openSubmitModal() {
-      Micromodal.show('submit-modal');
+      Micromodal.show("submit-modal");
     },
   },
 };
