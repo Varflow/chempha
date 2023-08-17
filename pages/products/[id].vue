@@ -20,7 +20,10 @@
         </div>
         <div class="col-12 col-lg-6 product-page__info">
           <h2 class="product-page__name">{{ productForView.name }}</h2>
-          <div class="product-page__excert">{{ productForView.excert }}</div>
+          <div
+            class="product-page__excert"
+            v-html="productForView.excert"
+          ></div>
           <div class="product-page__actions">
             <AppButton
               variant="black"
