@@ -85,6 +85,11 @@
     color: rgba($black, 0.6);
     line-height: 24px;
 
+    * {
+      font-family: $dm !important;
+      color: inherit !important;
+    }
+
     p {
       margin-bottom: 8px;
     }
