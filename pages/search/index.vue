@@ -25,9 +25,11 @@
         </div>
       </div>
 
+      <AppLoader v-if="loading" />
+
       <div
         class="row products-list gy-5"
-        v-if="products.length || posts.length"
+        v-if="!loading && (products.length || posts.length)"
       >
         <div class="col-12 col-lg-3" v-for="product of products">
           <ProductCard
@@ -65,6 +67,7 @@ export default {
       products: [],
       posts: [],
       media: null,
+      loading: false,
     };
   },
 
@@ -87,6 +90,7 @@ export default {
   methods: {
     async search() {
       try {
+        this.loading = true;
         const media = useStrapiMedia();
         const { find } = useStrapi();
 
@@ -153,6 +157,7 @@ export default {
         this.products = productsForView;
         this.posts = postsForView;
         this.media = media;
+        this.loading = false;
 
         this.$router.replace({ query: { q: this.searchQuery } });
       } catch (error) {

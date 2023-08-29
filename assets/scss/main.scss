@@ -14,7 +14,7 @@
 @import "./components/app/error-modal";
 @import "./components/app/pagination";
 
-@import "./components/category/card.scss";
+@import "./components/category/card";
 
 @import "./components/banners/main-banner";
 @import "./components/banners/about-banner";
@@ -23,7 +23,8 @@
 @import "./components/product/card";
 @import "./components/post/card";
 
-@import "./components/search/search-products.scss";
+@import "./components/search/search-products";
+@import "./components/app/loader";
 
 // ---------------
 // Pages
