@@ -23,6 +23,8 @@
 @import "./components/product/card";
 @import "./components/post/card";
 
+@import "./components/search/search-products.scss";
+
 // ---------------
 // Pages
 // ---------------
@@ -38,6 +40,7 @@
 @import "./pages/category/category";
 @import "./pages/product/product";
 @import "./pages/posts/posts";
+@import "./pages/search/search";
 
 * {
   margin: 0;

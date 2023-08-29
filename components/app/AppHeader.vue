@@ -13,9 +13,13 @@
           <img src="/images/logo.png" alt="" class="header-logo" />
         </NuxtLink>
       </div>
+
       <div class="col-3 d-flex d-lg-none"></div>
-      <div class="d-none d-lg-flex col-lg-9 justify-content-end header-menu">
+      <div class="d-none d-lg-flex col-lg-6 justify-content-end header-menu">
         <AppMenu />
+      </div>
+      <div class="col-lg-3 d-lg-flex d-none">
+        <SearchProducts />
       </div>
     </div>
   </header>

@@ -1,0 +1,11 @@
+.search-page {
+  padding-bottom: 5%;
+  .search-empty {
+    margin-bottom: 5%;
+    &__title {
+      font-family: $dm;
+      font-size: 32px;
+      color: #000;
+    }
+  }
+}

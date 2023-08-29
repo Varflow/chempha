@@ -5,7 +5,7 @@
     :space-between="0"
     :speed="1200"
     :delay="4000"
-    :autoplay="false"
+    :autoplay="true"
     class="main-slider"
     navigation
     pagination
