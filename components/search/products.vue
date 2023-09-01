@@ -28,6 +28,7 @@
 
 <script lang="js">
 export default {
+  emits: ["search"],
   data() {
     return {
       opened: false,
@@ -50,6 +51,7 @@ export default {
       this.opened = false;
     },
     search() {
+      this.$emit("search")
       this.$router.replace({ path: "/search", query: { q: this.query } })
     }
   },

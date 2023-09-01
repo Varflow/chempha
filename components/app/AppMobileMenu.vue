@@ -13,6 +13,10 @@
       </div>
     </div>
 
+    <div class="header-mobiler__search">
+      <SearchProducts @search="$emit('close')" />
+    </div>
+
     <div class="header-mobile__menu">
       <NuxtLink @click="$emit('close')" to="/company" class="header-menu__link"
         >Company</NuxtLink
