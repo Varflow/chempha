@@ -6,20 +6,20 @@ export default defineEventHandler(async (e) => {
   try {
     console.log("SITEMAP", process.env.STRAPI_URL);
 
-    const responseProducts: any = await axios(
-      `${process.env.STRAPI_URL}/api/tovaries`,
+    const { data: responseProducts } = await axios(
+      `http://188.34.180.169/dashboard/api/tovaries`,
       { method: "GET" }
     );
-    const responsePosts: any = await axios(
-      `${process.env.STRAPI_URL}/api/novostis`,
+    const { data: responsePosts } = await axios(
+      `http://188.34.180.169/dashboard/api/novostis`,
       { method: "GET" }
     );
-    const responseCategories: any = await axios(
-      `${process.env.STRAPI_URL}/api/categories`,
+    const { data: responseCategories } = await axios(
+      `http://188.34.180.169/dashboard/api/categories`,
       { method: "GET" }
     );
-    const responseSubCategories: any = await axios(
-      `${process.env.STRAPI_URL}/api/pod-kategoriyas`,
+    const { data: responseSubCategories } = await axios(
+      `http://188.34.180.169/dashboard/api/pod-kategoriyas`,
       { method: "GET" }
     );
 
