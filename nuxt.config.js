@@ -11,6 +11,80 @@ export default defineNuxtConfig({
   site: {
     url: process.env.NUXT_PUBLIC_SITE_URL,
   },
+  sitemap: {
+    urls: async () => {
+      try {
+        console.log("SITEMAP", process.env.STRAPI_URL);
+
+        const { data: responseProducts } = await axios.get(
+          `${process.env.STRAPI_URL}/api/tovaries`
+        );
+
+        const { data: responsePosts } = await axios.get(
+          `${process.env.STRAPI_URL}/api/novostis`
+        );
+
+        const { data: responseCategories } = await axios.get(
+          `${process.env.STRAPI_URL}/api/categories`
+        );
+
+        const { data: responseSubCategories } = await axios.get(
+          `${process.env.STRAPI_URL}/api/pod-kategoriyas`
+        );
+
+        if (
+          !responseProducts.data &&
+          !responsePosts.data &&
+          !responseCategories.data &&
+          !responseSubCategories.data
+        ) {
+          return [];
+        }
+
+        const productUrls = responseProducts.data.map((product) => {
+          return {
+            loc: `/products/${product.id}`,
+            lastmod: new Date(),
+          };
+        });
+
+        const postsUrls = responsePosts.data.map((post) => {
+          return {
+            loc: `/posts/${post.id}`,
+            lastmod: new Date(),
+          };
+        });
+
+        const categoriesUrl = responseCategories.data.map((category) => {
+          const section =
+            category.attributes.section === "ingredients"
+              ? "ingredients"
+              : "applications";
+          return {
+            loc: `/${section}/${category.id}`,
+            lastmod: new Date(),
+          };
+        });
+
+        const subcategoriesUrl = responseSubCategories.data.map((category) => {
+          return {
+            loc: `/subcategory/${category.id}`,
+            lastmod: new Date(),
+          };
+        });
+
+        return [
+          ...productUrls,
+          ...postsUrls,
+          ...categoriesUrl,
+          ...subcategoriesUrl,
+        ];
+      } catch (error) {
+        console.log(error);
+      }
+    },
+  },
+
   devtools: { enabled: true },
   modules: ["@nuxtjs/strapi", "@nuxt/image", "nuxt-simple-sitemap"],
   css: ["~/assets/scss/main.scss"],
@@ -77,12 +151,12 @@ export default defineNuxtConfig({
     },
   },
 
-  nitro: {
-    prerender: {
-      crawlLinks: true,
-      routes: ["/"],
-    },
-  },
+  // nitro: {
+  //   prerender: {
+  //     crawlLinks: true,
+  //     routes: ["/", "sitemap.xml"],
+  //   },
+  // },
 
   // @ts-ignore
   strapi: {
