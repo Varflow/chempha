@@ -1,8 +1,7 @@
 // https://nuxt.com/docs/api/configuration/nuxt-config
 
-import axios from "axios";
-
 export default defineNuxtConfig({
+  ssr: false,
   runtimeConfig: {
     public: {
       mailTo: process.env.MAIL_TO,
@@ -11,73 +10,6 @@ export default defineNuxtConfig({
   site: {
     url: process.env.NUXT_PUBLIC_SITE_URL,
   },
-  // sitemap: {
-  //   urls: async () => {
-  //     const client = axios.create({
-  //       baseURL: "127.0.0.1:1337/api",
-  //     });
-  //     try {
-  //       console.log("SITEMAP", process.env.STRAPI_URL);
-
-  //       const { data: responseProducts } = await client.get(`/tovaries`);
-  //       const { data: responsePosts } = await client.get(`/novostis`);
-  //       const { data: responseCategories } = await client.get(`/categories`);
-  //       const { data: responseSubCategories } = await client.get(
-  //         `/pod-kategoriyas`
-  //       );
-
-  //       if (
-  //         !responseProducts.data &&
-  //         !responsePosts.data &&
-  //         !responseCategories.data &&
-  //         !responseSubCategories.data
-  //       ) {
-  //         return [];
-  //       }
-
-  //       const productUrls = responseProducts.data.map((product) => {
-  //         return {
-  //           loc: `/products/${product.id}`,
-  //           lastmod: new Date(),
-  //         };
-  //       });
-
-  //       const postsUrls = responsePosts.data.map((post) => {
-  //         return {
-  //           loc: `/posts/${post.id}`,
-  //           lastmod: new Date(),
-  //         };
-  //       });
-
-  //       const categoriesUrl = responseCategories.data.map((category) => {
-  //         const section =
-  //           category.attributes.section === "ingredients"
-  //             ? "ingredients"
-  //             : "applications";
-  //         return {
-  //           loc: `/${section}/${category.id}`,
-  //           lastmod: new Date(),
-  //         };
-  //       });
-
-  //       const subcategoriesUrl = responseSubCategories.data.map((category) => {
-  //         return {
-  //           loc: `/subcategory/${category.id}`,
-  //           lastmod: new Date(),
-  //         };
-  //       });
-
-  //       return [
-  //         ...productUrls,
-  //         ...postsUrls,
-  //         ...categoriesUrl,
-  //         ...subcategoriesUrl,
-  //       ];
-  //     } catch (error) {
-  //       console.log(JSON.stringify(error));
-  //     }
-  //   },
-  // },
 
   devtools: { enabled: true },
   modules: ["@nuxtjs/strapi", "@nuxt/image", "nuxt-simple-sitemap"],
@@ -145,15 +77,19 @@ export default defineNuxtConfig({
     },
   },
 
-  // nitro: {
-  //   prerender: {
-  //     crawlLinks: true,
-  //     routes: ["/", "sitemap.xml"],
-  //   },
-  // },
+  nitro: {
+    prerender: {
+      crawlLinks: true,
+      routes: ["/"],
+    },
+  },
 
   // @ts-ignore
   strapi: {
     url: process.env.STRAPI_URL || "http://localhost:1337",
+    prefix: "/api",
+    version: "v4",
+    cookie: {},
+    cookieName: "strapi_jwt",
   },
 });
