@@ -99,12 +99,12 @@
     }
 
     table {
-      width: 100%;
+      width: 100% !important;
       border-collapse: collapse;
 
       td {
-        border: 1px solid #dee2e6;
-        padding: 6px;
+        border: 1px solid #dee2e6 !important;
+        padding: 6px !important;
       }
     }
   }
