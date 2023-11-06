@@ -1,12 +1,12 @@
 <template>
   <div class="post-page" v-if="postForView">
     <Head>
-      <Title>Chempha - {{ postForView?.title }}</Title>
+      <Title> {{ postForView?.title }}</Title>
       <Meta
         name="description"
         :content="postForView?.text?.substring(0, 100)"
       />
-      <Meta name="og:title" :content="`Chempha - ${postForView?.title}`" />
+      <Meta name="og:title" :content="` ${postForView?.title}`" />
       <Meta
         name="og:description"
         :content="postForView?.text?.substring(0, 100)"

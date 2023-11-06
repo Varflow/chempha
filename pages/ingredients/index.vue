@@ -2,8 +2,8 @@
 <template>
   <div class="category-page">
     <Head>
-      <Title>Chempha - Ingredients</Title>
-      <Meta name="og:title" :content="`Chempha - Ingredients`" />
+      <Title> Ingredients</Title>
+      <Meta name="og:title" :content="` Ingredients`" />
       <Meta name="og:image" content="/images/banners/ingredients.jpeg" />
     </Head>
     <div class="container">

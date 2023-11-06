@@ -1,7 +1,7 @@
 <template>
   <div class="container">
     <Head>
-      <Title>Chempha - {{ productForView?.name }}</Title>
+      <Title> {{ productForView?.name }}</Title>
       <Meta name="description" :content="productForView?.excert" />
       <Meta name="og:title" :content="`Chempha -${productForView?.name}`" />
       <Meta name="og:description" :content="productForView?.excert" />
