@@ -1,10 +1,11 @@
 <template>
   <div class="container">
     <Head>
-      <Title> {{ productForView?.name }}</Title>
-      <Meta name="description" :content="productForView?.excert" />
-      <Meta name="og:title" :content="`Chempha -${productForView?.name}`" />
-      <Meta name="og:description" :content="productForView?.excert" />
+      <Title> {{ productForView?.title }}</Title>
+      <Meta name="description" :content="productForView?.seo_description" />
+      <Meta name="keywords" :content="productForView?.seo_keywords" />
+      <Meta name="og:title" :content="`${productForView?.title}`" />
+      <Meta name="og:description" :content="productForView?.seo_description" />
       <Meta
         name="og:image"
         :content="`${media}${productForView?.image?.url}`"
@@ -64,6 +65,7 @@ export default {
 
       const product = await findOne("tovaries", id, { populate: "*" });
 
+      console.log(product.data.attributes);
       const productForView = {
         ...product.data.attributes,
         image: product.data.attributes?.image.data?.attributes,
