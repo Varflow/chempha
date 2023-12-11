@@ -2,10 +2,10 @@
   <div class="container">
     <Head>
       <Title> {{ productForView?.title }}</Title>
-      <Meta name="description" :content="productForView?.seo_description" />
+      <Meta name="description" :content="productForView?.seo_descripiton" />
       <Meta name="keywords" :content="productForView?.seo_keywords" />
       <Meta name="og:title" :content="`${productForView?.title}`" />
-      <Meta name="og:description" :content="productForView?.seo_description" />
+      <Meta name="og:description" :content="productForView?.seo_descripiton" />
       <Meta
         name="og:image"
         :content="`${media}${productForView?.image?.url}`"
