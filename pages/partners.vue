@@ -11,9 +11,14 @@
         <h2 class="section-title">Our partners</h2>
       </div>
       <div class="row partners-list gy-5">
-        <div class="col-12 col-lg-4 partner-item" v-for="partner of partners">
-          <img :src="partner" alt="" />
-        </div>
+        <a
+          class="col-12 col-lg-4 partner-item"
+          v-for="partner of partnersForView"
+          :href="partner.link"
+          target="_blank"
+        >
+          <img :src="partner.logo" alt="" />
+        </a>
       </div>
     </div>
   </div>
@@ -21,19 +26,29 @@
 
 <script>
 export default {
-  setup() {
-    const partners = [
-      "/images/partners/partner-1.jpg",
-      "/images/partners/partner-2.jpg",
-      "/images/partners/partner-3.jpg",
-      "/images/partners/partner-5.jpg",
-      "/images/partners/partner-6.jpg",
-      "/images/partners/partner-7.jpg",
-    ];
+  async setup() {
+    try {
+      const media = useStrapiMedia();
+      const { find } = useStrapi();
 
-    return {
-      partners,
-    };
+      const partners = await find("partneries", {
+        populate: "*",
+      });
+
+      const partnersForView = partners.data.map((partner) => {
+        console.log(
+          `${media}${partner.attributes.logo.data[0]?.attributes.url}`
+        );
+        return {
+          ...partner.attributes,
+          logo: `${media}${partner.attributes.logo.data?.attributes.url}`,
+        };
+      });
+
+      return { partnersForView };
+    } catch (error) {
+      console.log(error);
+    }
   },
 };
 </script>
