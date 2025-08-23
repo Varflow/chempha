@@ -10,7 +10,7 @@
     overflow: hidden;
 
     &:before {
-      content: '';
+      content: "";
 
       position: absolute;
       top: 0;
@@ -124,6 +124,9 @@
         height: 140px;
 
         margin-bottom: 24px;
+
+        border-radius: 500px;
+        overflow: hidden;
 
         img {
           width: 100%;
