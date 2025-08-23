@@ -149,10 +149,17 @@
           </div>
           <div class="col-lg-4 team-item">
             <div class="team-item__avatar">
-              <img src="/images/team/team-3.png" alt="" />
+              <img src="/images/team/team-3.jpg" alt="" />
             </div>
             <h4 class="team-item__name">Ms. Makarova Lubov</h4>
             <h5 class="team-item__post">SALES MANAGER</h5>
+          </div>
+          <div class="col-lg-4 team-item">
+            <div class="team-item__avatar">
+              <img src="/images/team/team-4.jpg" alt="" />
+            </div>
+            <h4 class="team-item__name">Ms. Kurtash Yuliia</h4>
+            <h5 class="team-item__post">Formulation technical support</h5>
           </div>
         </div>
       </div>
