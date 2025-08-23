@@ -57,7 +57,7 @@
               <b>Chempha OÜ</b> <br />
               Narva mnt 7-634 <br />
               10117 Tallinn, Estonia<br />
-              <a href="tel:+372 712 2708">Tel. +372 712 2708</a><br />
+              <a href="tel:+372 634 6390">Tel. +372 634 6390</a><br />
             </p>
             <p class="contact-email">
               <span class="contact-email__label">EMAIL</span><br />
