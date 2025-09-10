@@ -1,6 +1,7 @@
 // https://nuxt.com/docs/api/configuration/nuxt-config
 
 export default defineNuxtConfig({
+  compatibilityDate: "2025-09-11",
   ssr: false,
   runtimeConfig: {
     public: {
@@ -9,10 +10,16 @@ export default defineNuxtConfig({
   },
   site: {
     url: process.env.NUXT_PUBLIC_SITE_URL,
+    name: "Chempha",
   },
 
   devtools: { enabled: true },
-  modules: ["@nuxtjs/strapi", "@nuxt/image", "nuxt-simple-sitemap"],
+  modules: [
+    "@nuxt/image",
+    "@nuxtjs/strapi",
+    // "@nuxtjs/sitemap",
+    "@nuxtjs/robots",
+  ],
   css: ["~/assets/scss/main.scss"],
 
   app: {
@@ -88,7 +95,7 @@ export default defineNuxtConfig({
   strapi: {
     url: process.env.STRAPI_URL || "http://localhost:1337",
     prefix: "/api",
-    version: "v4",
+    version: "v5",
     cookie: {},
     cookieName: "strapi_jwt",
   },

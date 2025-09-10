@@ -44,8 +44,8 @@ export default {
             return {
               ...product.attributes,
               id: product.id,
-              category: product.attributes.pod_kategoriya?.data.attributes.name,
-              image: product.attributes.image.data?.attributes,
+              category: product.pod_kategoriya?.data.name,
+              image: product.image.data?.attributes,
             };
           });
 

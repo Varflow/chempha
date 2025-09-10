@@ -43,24 +43,26 @@ export default {
       const id = route.params.id;
       const category = await findOne("pod-kategoriyas", id, {
         populate: {
-          image: "*",
+          image: true,
           tovaries: {
-            populate: "*",
+            populate: {
+              image: true,
+            },
           },
         },
       });
 
-      const products = category.data.attributes.tovaries.data.map((product) => {
+      const products = category.data.tovaries.map((product) => {
         return {
-          ...product.attributes,
-          id: product.id,
-          category: product.attributes.pod_kategoriya?.data.attributes.name,
-          image: product.attributes.image.data?.attributes,
+          ...product,
+          id: product.documentId,
+          category: product.pod_kategoriya?.name,
+          image: product.image,
         };
       });
 
-      const title = category.data.attributes.name;
-      const categoryBanner = category.data.attributes.image.data?.attributes;
+      const title = category.data.name;
+      const categoryBanner = category.data.image?.url;
 
       this.loading = false;
       this.media = media;

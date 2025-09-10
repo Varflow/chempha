@@ -36,12 +36,10 @@ export default {
       });
 
       const partnersForView = partners.data.map((partner) => {
-        console.log(
-          `${media}${partner.attributes.logo.data[0]?.attributes.url}`
-        );
+        console.log(`${media}${partner.logo.data[0]?.url}`);
         return {
           ...partner.attributes,
-          logo: `${media}${partner.attributes.logo.data?.attributes.url}`,
+          logo: `${media}${partner.logo.data?.url}`,
         };
       });
 

@@ -33,9 +33,9 @@ const toView = (collection) => {
 
   return collection.map((collection) => {
     return {
-      id: collection.id,
-      name: collection.attributes.name,
-      image: collection.attributes.image.data?.attributes.url,
+      id: collection.documentId,
+      name: collection.name,
+      image: collection.image?.url,
     };
   });
 };
@@ -50,18 +50,19 @@ export default {
       const id = route.params.id;
       const category = await findOne("categories", id, {
         populate: {
-          image: "*",
+          image: true,
           pod_kategoriyas: {
-            populate: "*",
+            populate: {
+              image: true,
+            },
           },
         },
       });
 
-      const title = category.data.attributes.Name;
-      const categoryBanner = category.data.attributes.image.data?.attributes;
-      const subcategories = toView(
-        category.data.attributes.pod_kategoriyas?.data
-      );
+      const title = category.data.Name;
+      const categoryBanner = category.data.image?.url;
+
+      const subcategories = toView(category.data.pod_kategoriyas);
 
       return {
         title,

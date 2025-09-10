@@ -109,9 +109,9 @@ export default {
       const productsForView = products.data.map((product) => {
         return {
           id: product.id,
-          image: product.attributes.image.data?.attributes,
-          name: product.attributes.name,
-          category: product.attributes.pod_kategoriya?.data.attributes.name,
+          image: product.image.data?.attributes,
+          name: product.name,
+          category: product.pod_kategoriya?.data.name,
         };
       });
 

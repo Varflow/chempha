@@ -42,14 +42,14 @@ const toView = (collection) => {
     console.log(collection);
     return {
       id: collection.id,
-      name: collection.attributes.Name,
-      image: collection.attributes.image.data?.attributes.url,
-      children: !collection.attributes.pod_kategoriyas?.data.length
+      name: collection.Name,
+      image: collection.image.data?.url,
+      children: !collection.pod_kategoriyas?.length
         ? null
-        : collection.attributes.pod_kategoriyas?.data.map((subcategory) => {
+        : collection.pod_kategoriyas?.map((subcategory) => {
             return {
               id: subcategory.id,
-              name: subcategory.attributes.name,
+              name: subcategory.name,
             };
           }),
     };
@@ -62,13 +62,20 @@ export default {
       const { find } = useStrapi();
       const media = useStrapiMedia();
 
-      const categories = await find("categories", { populate: "*" });
+      const categories = await find("categories", {
+        populate: {
+          image: true,
+          pod_kategoriyas: true,
+        },
+      });
 
       const ingredients = categories.data.filter(
-        (category) => category.attributes.section === "application"
+        (category) => category.section === "application"
       );
 
       const ingredientsForView = toView(ingredients);
+
+      console.log(ingredientsForView);
 
       return {
         ingredientsForView,

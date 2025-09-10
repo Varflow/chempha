@@ -63,12 +63,13 @@ export default {
 
       const id = route.params.id;
 
-      const product = await findOne("tovaries", id, { populate: "*" });
+      const product = await findOne("tovaries", id, {
+        populate: { image: true },
+      });
 
-      console.log(product.data.attributes);
       const productForView = {
-        ...product.data.attributes,
-        image: product.data.attributes?.image.data?.attributes,
+        ...product.data,
+        image: product.data?.image,
       };
 
       return {

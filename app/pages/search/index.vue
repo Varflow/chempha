@@ -139,18 +139,18 @@ export default {
           return {
             ...product.attributes,
             id: product.id,
-            category: product.attributes.pod_kategoriya?.data.attributes.name,
-            image: product.attributes.image.data?.attributes,
+            category: product.pod_kategoriya?.data.name,
+            image: product.image.data?.attributes,
           };
         });
 
         const postsForView = posts.data.map((post) => {
           return {
             id: post.id,
-            image: `${media}${post.attributes.image.data?.attributes.url}`,
-            title: post.attributes.title,
-            text: post.attributes.text,
-            createdAt: new Date(post.attributes.createdAt).toLocaleDateString(),
+            image: `${media}${post.image.data?.url}`,
+            title: post.title,
+            text: post.text,
+            createdAt: new Date(post.createdAt).toLocaleDateString(),
           };
         });
 

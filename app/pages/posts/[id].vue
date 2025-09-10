@@ -40,9 +40,7 @@ export default {
 
       const postForView = {
         ...post.data.attributes,
-        createdAt: new Date(
-          post.data.attributes.createdAt
-        ).toLocaleDateString(),
+        createdAt: new Date(post.data.createdAt).toLocaleDateString(),
         image: post.data.attributes?.image.data?.attributes,
       };
 

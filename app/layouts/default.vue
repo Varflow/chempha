@@ -1,7 +1,7 @@
 <template>
   <div class="layout">
     <AppHeader />
-    <slot />
+    <NuxtPage />
     <AppFooter />
 
     <AppSuccessModal />
