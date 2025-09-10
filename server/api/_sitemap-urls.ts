@@ -48,9 +48,7 @@ export default defineEventHandler(async (e) => {
 
     const categoriesUrl = responseCategories.data.map((category: any) => {
       const section =
-        category.attributes.section === "ingredients"
-          ? "ingredients"
-          : "applications";
+        category.section === "ingredients" ? "ingredients" : "applications";
       return {
         loc: `/${section}/${category.id}`,
         lastmod: new Date(),
