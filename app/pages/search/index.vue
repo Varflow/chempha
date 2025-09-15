@@ -95,7 +95,7 @@ export default {
         const { find } = useStrapi();
 
         const products = await find("tovaries", {
-          populate: "*",
+          populate: { image: true },
           filters: {
             $or: [
               {
@@ -118,7 +118,7 @@ export default {
         });
 
         const posts = await find("novostis", {
-          populate: "*",
+          populate: { image: true },
           filters: {
             $or: [
               {
@@ -137,17 +137,17 @@ export default {
 
         const productsForView = products.data.map((product) => {
           return {
-            ...product.attributes,
-            id: product.id,
-            category: product.pod_kategoriya?.data.name,
-            image: product.image.data?.attributes,
+            ...product,
+            id: product.documentId,
+            category: product.pod_kategoriya?.name,
+            image: product.image,
           };
         });
 
         const postsForView = posts.data.map((post) => {
           return {
-            id: post.id,
-            image: `${media}${post.image.data?.url}`,
+            id: post.documentId,
+            image: `${media}${post.image?.url}`,
             title: post.title,
             text: post.text,
             createdAt: new Date(post.createdAt).toLocaleDateString(),

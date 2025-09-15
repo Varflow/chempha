@@ -1,43 +1,17 @@
 <template>
-  <div class="pagination" v-if="pages > 1">
+  <div class="pagination" v-if="pageCount > 1">
     <div
+      v-for="p of pageCount"
       class="page"
-      v-for="page of pages"
-      key="page"
-      @click="onPageChange(page)"
+      :key="p"
+      @click="$emit('change', p)"
     >
-      {{ page }}
+      {{ p }}
     </div>
   </div>
 </template>
 
-<script>
-export default {
-  emits: ["update:modelValue"],
-  props: ["total", "pageSize", "modelValue"],
-
-  data() {
-    return {
-      pages: 0,
-    };
-  },
-
-  watch: {
-    total: {
-      handler(value) {
-        if (value === 0) {
-          return 0;
-        }
-        this.pages = Math.ceil(value / this.pageSize);
-      },
-      immediate: true,
-    },
-  },
-
-  methods: {
-    onPageChange(page) {
-      this.$emit("update:modelValue", page);
-    },
-  },
-};
+<script setup>
+const props = defineProps(["pageCount"]);
+const emit = defineEmits(["change"]);
 </script>

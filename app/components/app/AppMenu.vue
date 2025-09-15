@@ -115,51 +115,10 @@
   <NuxtLink to="/contact-us" class="header-menu__link">Contact Us</NuxtLink>
 </template>
 
-<script>
-const toView = (collection) => {
-  if (!collection) {
-    return [];
-  }
+<script setup>
+const { toView, getApplicationCategories, getIngredientsCategories } =
+  await useCategoriesList();
 
-  return collection.map((collection) => {
-    return {
-      id: collection.documentId,
-      name: collection.Name,
-      children: !collection.pod_kategoriyas?.length
-        ? null
-        : collection.pod_kategoriyas?.map((subcategory) => {
-            return {
-              id: subcategory.id,
-              name: subcategory.name,
-            };
-          }),
-    };
-  });
-};
-
-export default {
-  async setup() {
-    try {
-      const { find } = useStrapi();
-      const categories = await find("categories", { populate: "*" });
-
-      const ingredients = categories.data.filter(
-        (category) => category.section === "ingredients"
-      );
-      const applications = categories.data.filter(
-        (category) => category.section === "application"
-      );
-
-      const ingredientsForView = toView(ingredients);
-      const applicationsForView = toView(applications);
-
-      return {
-        ingredientsForView,
-        applicationsForView,
-      };
-    } catch (error) {
-      console.log(error);
-    }
-  },
-};
+const ingredientsForView = toView(getIngredientsCategories());
+const applicationsForView = toView(getApplicationCategories());
 </script>

@@ -22,56 +22,11 @@
   </div>
 </template>
 
-<script>
-export default {
-  data() {
-    return {
-      media: null,
-      title: "",
-      categoryBanner: null,
-      products: [],
-      loading: false,
-    };
-  },
-  async mounted() {
-    try {
-      this.loading = true;
-      const route = useRoute();
-      const media = useStrapiMedia();
-      const { findOne } = useStrapi();
+<script setup>
+const media = useStrapiMedia();
 
-      const id = route.params.id;
-      const category = await findOne("pod-kategoriyas", id, {
-        populate: {
-          image: true,
-          tovaries: {
-            populate: {
-              image: true,
-            },
-          },
-        },
-      });
+const { category, products } = await useSubcategoryShow();
 
-      const products = category.data.tovaries.map((product) => {
-        return {
-          ...product,
-          id: product.documentId,
-          category: product.pod_kategoriya?.name,
-          image: product.image,
-        };
-      });
-
-      const title = category.data.name;
-      const categoryBanner = category.data.image?.url;
-
-      this.loading = false;
-      this.media = media;
-      this.title = title;
-      this.products = products;
-      this.categoryBanner = categoryBanner;
-    } catch (error) {
-      console.log(error);
-    }
-  },
-};
+const title = computed(() => category.value.data?.name);
+const categoryBanner = computed(() => category.value.data?.image?.url);
 </script>

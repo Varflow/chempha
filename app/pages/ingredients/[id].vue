@@ -4,10 +4,10 @@
     <Head>
       <Title> {{ title }}</Title>
       <Meta name="og:title" :content="` ${title}`" />
-      <Meta name="og:image" :content="`${media}${categoryBanner?.url}`" />
+      <Meta name="og:image" :content="bannerImage" />
     </Head>
     <div class="container">
-      <AppPageBanner :title="title" :img="categoryBanner" />
+      <AppPageBanner :title="title" :img="bannerImage" />
 
       <div class="row categories-list gy-5">
         <div class="col-12 col-lg-4" v-for="subcategory of subcategories">
@@ -25,54 +25,13 @@
     </div>
   </div>
 </template>
-<script>
-const toView = (collection) => {
-  if (!collection) {
-    return [];
-  }
 
-  return collection.map((collection) => {
-    return {
-      id: collection.documentId,
-      name: collection.name,
-      image: collection.image?.url,
-    };
-  });
-};
+<script setup>
+const media = useStrapiMedia();
 
-export default {
-  async setup() {
-    try {
-      const route = useRoute();
-      const media = useStrapiMedia();
-      const { findOne } = useStrapi();
+const { category, subcategories } = await useCategoryShow();
 
-      const id = route.params.id;
-      const category = await findOne("categories", id, {
-        populate: {
-          image: true,
-          pod_kategoriyas: {
-            populate: {
-              image: true,
-            },
-          },
-        },
-      });
-
-      const title = category.data.Name;
-      const categoryBanner = category.data.image?.url;
-
-      const subcategories = toView(category.data.pod_kategoriyas);
-
-      return {
-        title,
-        categoryBanner,
-        subcategories,
-        media,
-      };
-    } catch (error) {
-      console.log(error);
-    }
-  },
-};
+const title = computed(() => category.value.data?.Name);
+const categoryBanner = computed(() => category.value.data?.image);
+const bannerImage = computed(() => `${media}${categoryBanner.value?.url}`);
 </script>

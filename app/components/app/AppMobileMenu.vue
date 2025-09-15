@@ -182,13 +182,13 @@ const toView = (collection) => {
 
   return collection.map((collection) => {
     return {
-      id: collection.id,
+      id: collection.documentId,
       name: collection.Name,
-      children: !collection.pod_kategoriyas?.data.length
+      children: !collection.pod_kategoriyas
         ? null
-        : collection.pod_kategoriyas?.data.map((subcategory) => {
+        : collection.pod_kategoriyas?.map((subcategory) => {
             return {
-              id: subcategory.id,
+              id: subcategory.documentId,
               name: subcategory.name,
             };
           }),
@@ -210,7 +210,9 @@ export default {
   async setup() {
     try {
       const { find } = useStrapi();
-      const categories = await find("categories", { populate: "*" });
+      const categories = await find("categories", {
+        populate: { image: true, pod_kategoriyas: true },
+      });
 
       const ingredients = categories.data.filter(
         (category) => category.section === "ingredients"

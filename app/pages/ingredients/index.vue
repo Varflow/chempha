@@ -32,56 +32,10 @@
     </div>
   </div>
 </template>
-<script>
-const toView = (collection) => {
-  if (!collection) {
-    return [];
-  }
 
-  return collection.map((collection) => {
-    console.log(collection);
-    return {
-      id: collection.documentId,
-      name: collection.Name,
-      image: collection.image.data?.url,
-      children: !collection.pod_kategoriyas?.length
-        ? null
-        : collection.pod_kategoriyas?.map((subcategory) => {
-            return {
-              id: subcategory.documentId,
-              name: subcategory.name,
-            };
-          }),
-    };
-  });
-};
+<script setup>
+const media = useStrapiMedia();
+const { toView, getIngredientsCategories } = await useCategoriesList();
 
-export default {
-  async setup() {
-    try {
-      const { find } = useStrapi();
-      const media = useStrapiMedia();
-
-      const categories = await find("categories", {
-        populate: {
-          image: true,
-          pod_kategoriyas: true,
-        },
-      });
-
-      const ingredients = categories.data.filter(
-        (category) => category.section === "ingredients"
-      );
-
-      const ingredientsForView = toView(ingredients);
-
-      return {
-        ingredientsForView,
-        media,
-      };
-    } catch (error) {
-      console.log(error);
-    }
-  },
-};
+const ingredientsForView = toView(getIngredientsCategories());
 </script>

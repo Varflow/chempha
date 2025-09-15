@@ -49,7 +49,7 @@
     </div>
 
     <div class="footer-copyright">
-      Chempha © Copyright 2023 - All rights reserved
+      Chempha © Copyright {{ year }} - All rights reserved
     </div>
   </footer>
 </template>
@@ -62,13 +62,13 @@ const toView = (collection) => {
 
   return collection.map((collection) => {
     return {
-      id: collection.id,
+      id: collection.documentId,
       name: collection.Name,
-      children: !collection.pod_kategoriyas?.data.length
+      children: !collection.pod_kategoriyas?.length
         ? null
-        : collection.pod_kategoriyas?.data.map((subcategory) => {
+        : collection.pod_kategoriyas?.map((subcategory) => {
             return {
-              id: subcategory.id,
+              id: subcategory.documentId,
               name: subcategory.name,
             };
           }),
@@ -89,10 +89,13 @@ export default {
         (category) => category.section === "application"
       );
 
+      const year = new Date().getFullYear();
+
       const ingredientsForView = toView(ingredients);
       const applicationsForView = toView(applications);
 
       return {
+        year,
         ingredientsForView,
         applicationsForView,
       };

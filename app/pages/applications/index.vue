@@ -32,58 +32,10 @@
     </div>
   </div>
 </template>
-<script>
-const toView = (collection) => {
-  if (!collection) {
-    return [];
-  }
 
-  return collection.map((collection) => {
-    console.log(collection);
-    return {
-      id: collection.id,
-      name: collection.Name,
-      image: collection.image.data?.url,
-      children: !collection.pod_kategoriyas?.length
-        ? null
-        : collection.pod_kategoriyas?.map((subcategory) => {
-            return {
-              id: subcategory.id,
-              name: subcategory.name,
-            };
-          }),
-    };
-  });
-};
+<script setup>
+const media = useStrapiMedia();
+const { toView, getApplicationCategories } = await useCategoriesList();
 
-export default {
-  async setup() {
-    try {
-      const { find } = useStrapi();
-      const media = useStrapiMedia();
-
-      const categories = await find("categories", {
-        populate: {
-          image: true,
-          pod_kategoriyas: true,
-        },
-      });
-
-      const ingredients = categories.data.filter(
-        (category) => category.section === "application"
-      );
-
-      const ingredientsForView = toView(ingredients);
-
-      console.log(ingredientsForView);
-
-      return {
-        ingredientsForView,
-        media,
-      };
-    } catch (error) {
-      console.log(error);
-    }
-  },
-};
+const ingredientsForView = toView(getApplicationCategories());
 </script>

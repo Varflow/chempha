@@ -26,31 +26,6 @@
   </div>
 </template>
 
-<script>
-export default {
-  async setup() {
-    try {
-      const route = useRoute();
-      const media = useStrapiMedia();
-      const { findOne } = useStrapi();
-
-      const id = route.params.id;
-
-      const post = await findOne("novostis", id, { populate: "*" });
-
-      const postForView = {
-        ...post.data.attributes,
-        createdAt: new Date(post.data.createdAt).toLocaleDateString(),
-        image: post.data.attributes?.image.data?.attributes,
-      };
-
-      return {
-        media,
-        postForView,
-      };
-    } catch (error) {
-      console.log(error);
-    }
-  },
-};
+<script setup>
+const { postForView } = await usePostShow();
 </script>

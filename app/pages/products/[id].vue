@@ -51,40 +51,11 @@
   </div>
 </template>
 
-<script>
+<script setup>
 import Micromodal from "micromodal";
 
-export default {
-  async setup() {
-    try {
-      const route = useRoute();
-      const media = useStrapiMedia();
-      const { findOne } = useStrapi();
-
-      const id = route.params.id;
-
-      const product = await findOne("tovaries", id, {
-        populate: { image: true },
-      });
-
-      const productForView = {
-        ...product.data,
-        image: product.data?.image,
-      };
-
-      return {
-        media,
-        productForView,
-      };
-    } catch (error) {
-      console.log(error);
-    }
-  },
-
-  methods: {
-    openSubmitModal() {
-      Micromodal.show("submit-modal");
-    },
-  },
+const { productForView } = await useProductShow();
+const openSubmitModal = () => {
+  Micromodal.show("submit-modal");
 };
 </script>
