@@ -13,36 +13,7 @@
   </div>
 </template>
 
-<script>
-export default {
-  props: ["limit"],
-  async setup(props) {
-    try {
-      const media = useStrapiMedia();
-      const { find } = useStrapi();
-
-      const posts = await find("novostis", {
-        populate: "*",
-        pagination: { limit: props.limit },
-        sort: "createdAt:desc",
-      });
-
-      const postsForView = posts.data.map((post) => {
-        return {
-          id: post.id,
-          image: `${media}${post.image.data?.url}`,
-          title: post.title,
-          text: post.text,
-          createdAt: new Date(post.createdAt).toLocaleDateString(),
-        };
-      });
-
-      return {
-        postsForView,
-      };
-    } catch (error) {
-      console.log(error);
-    }
-  },
-};
+<script setup>
+const props = defineProps(["limit"]);
+const { postsForView } = await usePostsList({ limit: props.limit });
 </script>

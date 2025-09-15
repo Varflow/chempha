@@ -2,7 +2,8 @@
 
 export default defineNuxtConfig({
   compatibilityDate: "2025-09-11",
-  ssr: false,
+  ssr: true,
+
   runtimeConfig: {
     public: {
       mailTo: process.env.MAIL_TO,

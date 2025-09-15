@@ -4,8 +4,8 @@
     :class="{ 'with-image': img && !img.includes('undefined') }"
   >
     <img
-      :src="img"
       v-if="Boolean(img && !img.includes('undefined'))"
+      :src="img"
       alt=""
       class="page-banner__img"
     />

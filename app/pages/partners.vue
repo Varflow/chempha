@@ -12,9 +12,9 @@
       </div>
       <div class="row partners-list gy-5">
         <a
-          class="col-12 col-lg-4 partner-item"
           v-for="partner of partnersForView"
           :href="partner.link"
+          class="col-12 col-lg-4 partner-item"
           target="_blank"
         >
           <img :src="partner.logo" alt="" />
@@ -24,29 +24,6 @@
   </div>
 </template>
 
-<script>
-export default {
-  async setup() {
-    try {
-      const media = useStrapiMedia();
-      const { find } = useStrapi();
-
-      const partners = await find("partneries", {
-        populate: "*",
-      });
-
-      const partnersForView = partners.data.map((partner) => {
-        console.log(`${media}${partner.logo.data[0]?.url}`);
-        return {
-          ...partner.attributes,
-          logo: `${media}${partner.logo.data?.url}`,
-        };
-      });
-
-      return { partnersForView };
-    } catch (error) {
-      console.log(error);
-    }
-  },
-};
+<script setup>
+const { partnersForView } = await usePartnersList();
 </script>
