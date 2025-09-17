@@ -8,7 +8,7 @@
       <PostList :limit="4" />
 
       <div class="section-actions">
-        <NuxtLink to="/posts" class="link-without-decoration">
+        <NuxtLink :to="$localePath('/posts')" class="link-without-decoration">
           <AppButton variant="black">View all news</AppButton>
         </NuxtLink>
       </div>

@@ -9,7 +9,7 @@
         </div>
       </div>
       <div class="col-6 col-lg-3">
-        <NuxtLink @click="close" to="/">
+        <NuxtLink @click="close" :to="$localePath('/')">
           <img src="/images/logo.png" alt="" class="header-logo" />
         </NuxtLink>
       </div>
@@ -20,6 +20,7 @@
       </div>
       <div class="col-lg-3 d-lg-flex d-none">
         <SearchProducts />
+        <AppLocale />
       </div>
     </div>
   </header>
@@ -27,21 +28,14 @@
   <AppMobileMenu @close="close" :opened="mobileMenuOpened" />
 </template>
 
-<script>
-export default {
-  data() {
-    return {
-      mobileMenuOpened: false,
-    };
-  },
+<script setup>
+const mobileMenuOpened = ref(false);
 
-  methods: {
-    open() {
-      this.mobileMenuOpened = true;
-    },
-    close() {
-      this.mobileMenuOpened = false;
-    },
-  },
-};
+function open() {
+  mobileMenuOpened.value = true;
+}
+
+function close() {
+  mobileMenuOpened.value = false;
+}
 </script>

@@ -1,7 +1,7 @@
 <template>
   <div class="header-mobile d-block d-lg-none" :class="{ active: opened }">
     <div class="header-mobile__header">
-      <NuxtLink @click="$emit('close')" to="/">
+      <NuxtLink @click="$emit('close')" :to="$localePath('/')">
         <img src="/images/logo.png" alt="" class="header-logo" />
       </NuxtLink>
       <div
@@ -18,7 +18,10 @@
     </div>
 
     <div class="header-mobile__menu">
-      <NuxtLink @click="$emit('close')" to="/company" class="header-menu__link"
+      <NuxtLink
+        @click="$emit('close')"
+        :to="$localePath('/company')"
+        class="header-menu__link"
         >Company</NuxtLink
       >
       <div class="header-menu__link">
@@ -65,7 +68,7 @@
 
             <NuxtLink
               v-else
-              :to="`/category/${category.id}`"
+              :to="$localePath(`/category/${category.id}`)"
               @click="$emit('close')"
             >
               {{ category.name }}
@@ -78,7 +81,7 @@
             >
               <NuxtLink
                 v-for="subcategory of category.children"
-                :to="`/subcategory/${subcategory.id}`"
+                :to="$localePath(`/subcategory/${subcategory.id}`)"
                 class="header-menu__link"
                 @click="$emit('close')"
               >
@@ -135,7 +138,7 @@
 
             <NuxtLink
               v-else
-              :to="`/category/${category.id}`"
+              :to="$localePath(`/category/${category.id}`)"
               @click="$emit('close')"
             >
               {{ category.name }}
@@ -148,7 +151,7 @@
             >
               <NuxtLink
                 v-for="subcategory of category.children"
-                :to="`/subcategory/${subcategory.id}`"
+                :to="$localePath(`/subcategory/${subcategory.id}`)"
                 class="header-menu__link"
                 @click="$emit('close')"
               >
@@ -158,15 +161,21 @@
           </div>
         </div>
       </div>
-      <NuxtLink @click="$emit('close')" to="/partners" class="header-menu__link"
+      <NuxtLink
+        @click="$emit('close')"
+        :to="$localePath('/partners')"
+        class="header-menu__link"
         >Partners</NuxtLink
       >
-      <NuxtLink @click="$emit('close')" to="/news" class="header-menu__link"
+      <NuxtLink
+        @click="$emit('close')"
+        :to="$localePath('/news')"
+        class="header-menu__link"
         >News</NuxtLink
       >
       <NuxtLink
         @click="$emit('close')"
-        to="/contact-us"
+        :to="$localePath('/contact-us')"
         class="header-menu__link"
         >Contact Us</NuxtLink
       >
