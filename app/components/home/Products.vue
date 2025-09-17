@@ -70,7 +70,7 @@
     </swiper>
 
     <div class="section-products__actions">
-      <NuxtLink to="/products" class="link-without-decoration">
+      <NuxtLink :to="$localePath('/products')" class="link-without-decoration">
         <AppButton variant="black"> View All Products </AppButton>
       </NuxtLink>
     </div>

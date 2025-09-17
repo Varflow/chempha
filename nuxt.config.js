@@ -17,11 +17,19 @@ export default defineNuxtConfig({
   devtools: { enabled: true },
   modules: [
     "@nuxt/image",
-    "@nuxtjs/strapi",
-    // "@nuxtjs/sitemap",
+    "@nuxtjs/strapi", // "@nuxtjs/sitemap",
     "@nuxtjs/robots",
+    "@nuxtjs/i18n",
   ],
   css: ["~/assets/scss/main.scss"],
+
+  i18n: {
+    defaultLocale: "en",
+    locales: [
+      { code: "en", name: "English", language: "en", file: "en.json" },
+      { code: "ee", name: "Estonian", language: "et-EE", file: "ee.json" },
+    ],
+  },
 
   app: {
     pageTransition: { name: "page", mode: "out-in" },

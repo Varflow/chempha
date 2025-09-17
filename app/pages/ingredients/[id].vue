@@ -12,7 +12,7 @@
       <div class="row categories-list gy-5">
         <div class="col-12 col-lg-4" v-for="subcategory of subcategories">
           <NuxtLink
-            :to="`/subcategory/${subcategory.id}`"
+            :to="$localePath(`/subcategory/${subcategory.id}`)"
             class="category-card__link"
           >
             <CategoryCard

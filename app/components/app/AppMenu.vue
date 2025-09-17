@@ -1,7 +1,9 @@
 <template>
-  <NuxtLink to="/company" class="header-menu__link">Company</NuxtLink>
+  <NuxtLink :to="$localePath('/company')" class="header-menu__link"
+    >Company</NuxtLink
+  >
   <div class="header-menu__link" v-if="ingredientsForView">
-    <NuxtLink to="/ingredients">
+    <NuxtLink :to="$localePath('/ingredients')">
       <div class="header-menu__link-label">
         Ingredients
         <svg
@@ -20,7 +22,7 @@
     <div class="header-menu-dropdown header-menu-categories">
       <div class="header-menu__link" v-for="category of ingredientsForView">
         <NuxtLink
-          :to="`/ingredients/${category.id}`"
+          :to="$localePath(`/ingredients/${category.id}`)"
           class="header-menu__link-label"
           v-if="category.children"
         >
@@ -37,7 +39,7 @@
             />
           </svg>
         </NuxtLink>
-        <NuxtLink v-else :to="`/category/${category.id}`">
+        <NuxtLink v-else :to="$localePath(`/category/${category.id}`)">
           {{ category.name }}
         </NuxtLink>
         <div
@@ -46,7 +48,7 @@
         >
           <NuxtLink
             v-for="subcategory of category.children"
-            :to="`/subcategory/${subcategory.id}`"
+            :to="$localePath(`/subcategory/${subcategory.id}`)"
             class="header-menu__link"
           >
             {{ subcategory.name }}
@@ -56,7 +58,7 @@
     </div>
   </div>
   <div class="header-menu__link" v-if="applicationsForView">
-    <NuxtLink to="/applications">
+    <NuxtLink :to="$localePath('/applications')">
       <div class="header-menu__link-label">
         Applications
         <svg
@@ -75,7 +77,7 @@
     <div class="header-menu-dropdown header-menu-categories">
       <div class="header-menu__link" v-for="category of applicationsForView">
         <NuxtLink
-          :to="`/applications/${category.id}`"
+          :to="$localePath(`/applications/${category.id}`)"
           class="header-menu__link-label"
           v-if="category.children"
         >
@@ -92,7 +94,7 @@
             />
           </svg>
         </NuxtLink>
-        <NuxtLink v-else :to="`/category/${category.id}`">
+        <NuxtLink v-else :to="$localePath(`/category/${category.id}`)">
           {{ category.name }}
         </NuxtLink>
         <div
@@ -101,7 +103,7 @@
         >
           <NuxtLink
             v-for="subcategory of category.children"
-            :to="`/subcategory/${subcategory.id}`"
+            :to="$localePath(`/subcategory/${subcategory.id}`)"
             class="header-menu__link"
           >
             {{ subcategory.name }}
@@ -110,9 +112,13 @@
       </div>
     </div>
   </div>
-  <NuxtLink to="/partners" class="header-menu__link">Partners</NuxtLink>
-  <NuxtLink to="/news" class="header-menu__link">News</NuxtLink>
-  <NuxtLink to="/contact-us" class="header-menu__link">Contact Us</NuxtLink>
+  <NuxtLink :to="$localePath('/partners')" class="header-menu__link"
+    >Partners</NuxtLink
+  >
+  <NuxtLink :to="$localePath('/news')" class="header-menu__link">News</NuxtLink>
+  <NuxtLink :to="$localePath('/contact-us')" class="header-menu__link"
+    >Contact Us</NuxtLink
+  >
 </template>
 
 <script setup>

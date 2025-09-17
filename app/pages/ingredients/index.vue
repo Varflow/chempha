@@ -17,9 +17,11 @@
           <NuxtLink
             class="category-card__link"
             :to="
-              category.children && category.children.length
-                ? `/ingredients/${category.id}`
-                : `/category/${category.id}`
+              $localePath(
+                category.children && category.children.length
+                  ? `/ingredients/${category.id}`
+                  : `/category/${category.id}`
+              )
             "
           >
             <CategoryCard

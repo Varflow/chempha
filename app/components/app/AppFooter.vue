@@ -20,9 +20,11 @@
         <div class="footer-col__list">
           <NuxtLink
             :to="
-              Boolean(category.children?.length)
-                ? `/ingredients/${category.id}`
-                : `/category/${category.id}`
+              $localePath(
+                Boolean(category.children?.length)
+                  ? `/ingredients/${category.id}`
+                  : `/category/${category.id}`
+              )
             "
             class="footer-col__item"
             v-for="category of ingredientsForView"
@@ -36,9 +38,11 @@
         <div class="footer-col__list">
           <NuxtLink
             :to="
-              Boolean(category.children?.length)
-                ? `/applications/${category.id}`
-                : `/category/${category.id}`
+              $localePath(
+                Boolean(category.children?.length)
+                  ? `/applications/${category.id}`
+                  : `/category/${category.id}`
+              )
             "
             class="footer-col__item"
             v-for="category of applicationsForView"

@@ -25,7 +25,10 @@
           cosmetic and personal care applications
         </h3>
         <div class="main-banner__actions">
-          <NuxtLink to="/products" class="link-without-decoration">
+          <NuxtLink
+            :to="$localePath('/products')"
+            class="link-without-decoration"
+          >
             <AppButton variant="white"> Explore products </AppButton>
           </NuxtLink>
         </div>
@@ -43,7 +46,10 @@
         </h2>
 
         <div class="main-banner__actions">
-          <NuxtLink to="/products" class="link-without-decoration">
+          <NuxtLink
+            :to="$localePath('/products')"
+            class="link-without-decoration"
+          >
             <AppButton variant="white"> Explore products </AppButton>
           </NuxtLink>
         </div>
@@ -61,7 +67,10 @@
         </h2>
 
         <div class="main-banner__actions">
-          <NuxtLink to="/products" class="link-without-decoration">
+          <NuxtLink
+            :to="$localePath('/products')"
+            class="link-without-decoration"
+          >
             <AppButton variant="white"> Explore products </AppButton>
           </NuxtLink>
         </div>
