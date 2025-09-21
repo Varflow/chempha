@@ -10,9 +10,9 @@
       <h4 class="product-card__name">{{ name }}</h4>
     </NuxtLink>
     <div class="product-card__actions">
-      <AppButton variant="black" @click="openSubmitModal"
-        >Sample request</AppButton
-      >
+      <AppButton variant="black" @click="openSubmitModal">
+        {{ $t("Sample request") }}
+      </AppButton>
     </div>
   </div>
   <ProductSubmitModal :title="name" />

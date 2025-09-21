@@ -30,15 +30,16 @@
               variant="black"
               appearence="filled"
               @click="openSubmitModal"
-              >Sample request</AppButton
             >
+              {{ $t("Sample request") }}
+            </AppButton>
           </div>
         </div>
       </div>
 
       <div class="product-page__content">
         <div class="product-page__tabs">
-          <div class="product-page__tab">Description</div>
+          <div class="product-page__tab">{{ $t("Description") }}</div>
         </div>
         <div
           class="product-page__text"

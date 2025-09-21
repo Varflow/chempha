@@ -1,12 +1,12 @@
 <template>
   <div class="search-page">
     <div class="container">
-      <AppPageBanner title="Search result" />
+      <AppPageBanner :title="$t('Search result')" />
       <div class="search-container--full">
         <input
           type="text"
           class="search-container__input"
-          placeholder="Search..."
+          :placeholder="$t('Search...')"
           v-model="searchQuery"
           v-on:keyup.enter="search"
         />
@@ -56,7 +56,7 @@
       </div>
 
       <div class="search-empty" v-else>
-        <h1 class="search-empty__title">No search results</h1>
+        <h1 class="search-empty__title">{{ $t("No search results") }}</h1>
       </div>
     </div>
   </div>

@@ -1,7 +1,7 @@
 <template>
   <div class="category-page">
     <div class="container">
-      <AppPageBanner title="All Products" />
+      <AppPageBanner :title="$t('All Products')" />
       <div class="row products-list gy-5">
         <div class="col-12 col-lg-3" v-for="product of products">
           <ProductCard

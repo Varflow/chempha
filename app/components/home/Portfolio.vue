@@ -1,12 +1,13 @@
 <template>
   <div class="section-portfolio container">
     <div class="section-header">
-      <h3 class="section-title">Product Portfolio</h3>
+      <h3 class="section-title">{{ $t("Product Portfolio") }}</h3>
       <h4 class="section-subtitle">
-        From clinically substantiated plant stem cells, peptides, extracts,
-        fermented oils and other actives up to sustainable silicone alternatives
-        and multifunctional polymers with unique characteristics and unusual
-        behaviour in formulations
+        {{
+          $t(
+            "From clinically substantiated plant stem cells, peptides, extracts, fermented oils and other actives up to sustainable silicone alternatives and multifunctional polymers with unique characteristics and unusual behaviour in formulations"
+          )
+        }}
       </h4>
     </div>
 
@@ -22,9 +23,9 @@
           </div>
 
           <div class="portfolio-card__content">
-            <h3 class="portfolio-card__title">Ingredients</h3>
+            <h3 class="portfolio-card__title">{{ $t("Ingredients") }}</h3>
             <h4 class="portfolio-card__subtitle">
-              Categories
+              {{ $t("Categories") }}
               <svg
                 xmlns="http://www.w3.org/2000/svg"
                 id="Outline"
@@ -50,9 +51,9 @@
             />
           </div>
           <div class="portfolio-card__content">
-            <h3 class="portfolio-card__title">Applications</h3>
+            <h3 class="portfolio-card__title">{{ $t("Applications") }}</h3>
             <h4 class="portfolio-card__subtitle">
-              Categories
+              {{ $t("Categories") }}
               <svg
                 xmlns="http://www.w3.org/2000/svg"
                 id="Outline"

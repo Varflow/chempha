@@ -1,9 +1,10 @@
 export const useCategoryShow = async () => {
+  const { locale } = useLocale();
   const { findOne } = useStrapi();
 
   const route = useRoute();
   const id = route.params.id;
-  const dataKey = computed(() => `category-${id}`);
+  const dataKey = computed(() => `category-${id}-${locale.value}`);
 
   const { data: category } = await useAsyncData(dataKey, () =>
     findOne("categories", id, {
@@ -20,12 +21,13 @@ export const useCategoryShow = async () => {
           },
         },
       },
+      locale: locale.value,
     })
   );
 
   const products = computed(
     () =>
-      category.value.data?.tovaries?.map((product) => ({
+      category.value?.data?.tovaries?.map((product) => ({
         ...product,
         id: product.documentId,
         category: product.pod_kategoriya?.Name,
@@ -35,7 +37,7 @@ export const useCategoryShow = async () => {
 
   const subcategories = computed(
     () =>
-      category.value.data?.pod_kategoriyas?.map((sub) => ({
+      category.value?.data?.pod_kategoriyas?.map((sub) => ({
         id: sub.documentId,
         name: sub.name,
         image: sub.image?.url,

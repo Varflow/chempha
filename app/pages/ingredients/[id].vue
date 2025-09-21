@@ -31,7 +31,7 @@ const media = useStrapiMedia();
 
 const { category, subcategories } = await useCategoryShow();
 
-const title = computed(() => category.value.data?.Name);
-const categoryBanner = computed(() => category.value.data?.image);
+const title = computed(() => category.value?.data?.Name);
+const categoryBanner = computed(() => category.value?.data?.image);
 const bannerImage = computed(() => `${media}${categoryBanner.value?.url}`);
 </script>

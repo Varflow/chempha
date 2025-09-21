@@ -1,24 +1,30 @@
 <template>
   <div class="contact-page">
     <Head>
-      <Title>Chempha Contact Us</Title>
-      <Meta name="og:title" content="Chempha Contact Us" />
+      <Title>{{ $t("Chempha Contact Us") }}</Title>
+      <Meta name="og:title" :content="$t('Chempha Contact Us')" />
     </Head>
     <div class="container">
       <AppPageBanner
-        title="Contact us"
-        subtitle="If you have any questions or would like to learn more about our ingredients, please don't hesitate to get in touch with us."
+        :title="$t('Contact us')"
+        :subtitle="
+          $t(
+            'If you have any questions or would like to learn more about our ingredients, please don\'t hesitate to get in touch with us.'
+          )
+        "
       />
 
       <div class="contact-content row gy-4">
         <div class="col-12 col-lg-6">
-          <h4 class="contact-title">Contact Us</h4>
-          <h5 class="contact-subtitle">We look forward to hearing from you!</h5>
+          <h4 class="contact-title">{{ $t("Contact Us") }}</h4>
+          <h5 class="contact-subtitle">
+            {{ $t("We look forward to hearing from you!") }}
+          </h5>
 
           <form class="contact-form" @submit.prevent="submit">
             <div class="contact-form__row">
               <label for="name" class="form-field col-12">
-                Your name*
+                {{ $t("Your name") }}*
                 <input
                   class="form-field__input"
                   type="text"
@@ -28,7 +34,7 @@
                 />
               </label>
               <label for="email" class="form-field col-12">
-                Your email*
+                {{ $t("Your email") }} *
                 <input
                   class="form-field__input"
                   type="email"
@@ -39,7 +45,7 @@
               </label>
             </div>
             <label for="message" class="form-field">
-              Your message
+              {{ $t("Your message") }}
               <textarea
                 id="message"
                 v-model="message"
@@ -47,7 +53,7 @@
               />
             </label>
             <div class="contact-form__actions">
-              <AppButton variant="black">Send message</AppButton>
+              <AppButton variant="black">{{ $t("Send message") }}</AppButton>
             </div>
           </form>
         </div>
@@ -60,7 +66,8 @@
               <a href="tel:+372 712 2708">Tel. +372 712 2708</a><br />
             </p>
             <p class="contact-email">
-              <span class="contact-email__label">EMAIL</span><br />
+              <span class="contact-email__label">{{ $t("EMAIL") }} </span>
+              <br />
               <a href="mailto:info@chempha.com" class="contact-email__value"
                 >info@chempha.com</a
               >

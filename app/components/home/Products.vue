@@ -3,8 +3,11 @@
     <div class="container">
       <div class="section-products__header">
         <h3 class="section-title">
-          We are committed to provide you with highly efficient and sustainable
-          solutions that are safe for both the environment and people
+          {{
+            $t(
+              "We are committed to provide you with highly efficient and sustainabl solutions that are safe for both the environment and people"
+            )
+          }}
         </h3>
         <div class="slider-navigation">
           <div class="slider-prev" ref="prev">
@@ -71,13 +74,13 @@
 
     <div class="section-products__actions">
       <NuxtLink :to="$localePath('/products')" class="link-without-decoration">
-        <AppButton variant="black"> View All Products </AppButton>
+        <AppButton variant="black"> {{ $t("View All Products") }} </AppButton>
       </NuxtLink>
     </div>
   </div>
 </template>
 
-<script>
+<script setup>
 import { ref } from "vue";
 import { Navigation } from "swiper/modules";
 import { Swiper, SwiperSlide } from "swiper/vue";
@@ -86,39 +89,11 @@ import "swiper/css";
 import "swiper/css/navigation";
 import "swiper/css/pagination";
 
-export default {
-  components: {
-    Swiper,
-    SwiperSlide,
-  },
+const modules = [Navigation];
+const prev = ref(null);
+const next = ref(null);
 
-  async setup() {
-    try {
-      const modules = [Navigation];
-      const prev = ref(null);
-      const next = ref(null);
+const { productsForView, media } = useProductsList(ref(1), 10);
 
-      const media = useStrapiMedia();
-      const { find } = useStrapi();
-
-      const products = await find("tovaries", {
-        populate: "*",
-        pagination: { limit: 10 },
-      });
-
-      const productsForView = products.data.map((product) => {
-        return {
-          id: product.id,
-          image: product.image.data?.attributes,
-          name: product.name,
-          category: product.pod_kategoriya?.data.name,
-        };
-      });
-
-      return { modules, prev, next, productsForView, media };
-    } catch (error) {
-      console.log(error);
-    }
-  },
-};
+console.log("productsForView", productsForView);
 </script>

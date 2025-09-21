@@ -18,18 +18,27 @@
           class="main-banner__image"
         />
         <h2 class="main-banner__title">
-          Convergence of experience, science and nature in cosmetic ingredients
+          {{
+            $t(
+              "Convergence of experience, science and nature in cosmetic ingredients"
+            )
+          }}
         </h2>
         <h3 class="main-banner__subtitle">
-          We bring you only the latest and most advanced ingredients for your
-          cosmetic and personal care applications
+          {{
+            $t(
+              "We bring you only the latest and most advanced ingredients for yourcosmetic and personal care applications"
+            )
+          }}
         </h3>
         <div class="main-banner__actions">
           <NuxtLink
             :to="$localePath('/products')"
             class="link-without-decoration"
           >
-            <AppButton variant="white"> Explore products </AppButton>
+            <AppButton variant="white">
+              {{ $t("Explore products") }}
+            </AppButton>
           </NuxtLink>
         </div>
       </div>
@@ -42,7 +51,7 @@
           class="main-banner__image"
         />
         <h2 class="main-banner__title">
-          Providing unique cosmetic specialties
+          {{ $t("Providing unique cosmetic specialties") }}
         </h2>
 
         <div class="main-banner__actions">
@@ -50,7 +59,7 @@
             :to="$localePath('/products')"
             class="link-without-decoration"
           >
-            <AppButton variant="white"> Explore products </AppButton>
+            <AppButton variant="white">{{ $t("Explore products") }}</AppButton>
           </NuxtLink>
         </div>
       </div>
@@ -63,7 +72,7 @@
           class="main-banner__image"
         />
         <h2 class="main-banner__title">
-          High performance and sustainable ingredients
+          {{ $t("High performance and sustainable ingredients") }}
         </h2>
 
         <div class="main-banner__actions">
@@ -71,7 +80,7 @@
             :to="$localePath('/products')"
             class="link-without-decoration"
           >
-            <AppButton variant="white"> Explore products </AppButton>
+            <AppButton variant="white">{{ $t("Explore products") }}</AppButton>
           </NuxtLink>
         </div>
       </div>
