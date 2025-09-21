@@ -1,4 +1,5 @@
 export const useProductShow = async () => {
+  const media = useStrapiMedia();
   const { locale } = useLocale();
   const { findOne } = useStrapi();
 
@@ -22,6 +23,7 @@ export const useProductShow = async () => {
   );
 
   return {
+    media,
     productForView,
   };
 };
