@@ -2,13 +2,13 @@
 <template>
   <div class="category-page">
     <Head>
-      <Title> Ingredients</Title>
-      <Meta name="og:title" :content="` Ingredients`" />
+      <Title>{{ $t("Ingredients") }}</Title>
+      <Meta name="og:title" :content="$t('Ingredients')" />
       <Meta name="og:image" content="/images/banners/ingredients.jpeg" />
     </Head>
     <div class="container">
       <AppPageBanner
-        title="Ingredients"
+        :title="$t('Ingredients')"
         img="/images/banners/ingredients.jpeg"
       />
 
@@ -37,7 +37,7 @@
 
 <script setup>
 const media = useStrapiMedia();
-const { toView, getIngredientsCategories } = await useCategoriesList();
+const { toView, ingredientsCategories } = await useCategoriesList();
 
-const ingredientsForView = toView(getIngredientsCategories());
+const ingredientsForView = toView(ingredientsCategories.value);
 </script>

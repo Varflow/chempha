@@ -22,7 +22,9 @@
         </svg>
       </div>
       <h2 class="success-modal__title">
-        Application successfully sent. Our manager will contact you soon
+        {{
+          $t("Application successfully sent. Our manager will contact you soon")
+        }}
       </h2>
     </div>
   </AppModal>

@@ -1,3 +1,89 @@
 {
-  "welcome": "Tere tulemast"
+  "Contact us": "Võta meiega ühendust",
+  "Contact Us": "Võta meiega ühendust",
+  "Ingredients": "Koostisosad",
+  "Application products": "Rakendustooted",
+  "All rights reserved": "Kõik õigused kaitstud",
+  "Copyright": "Autoriõigus",
+
+  "Company": "Ettevõte",
+  "Applications": "Rakendused",
+  "Partners": "Partnerid",
+  "News": "Uudised",
+
+  "Something went wrong": "Midagi läks valesti",
+
+  "Application successfully sent. Our manager will contact you soon": "Taotlus edukalt saadetud. Meie juht võtab teiega peagi ühendust",
+
+  "About company": "Ettevõttest",
+  "Ingredient solutions for Personal care & Cosmetics": "Koostisainete lahendused isiklikuks hoolduseks ja kosmeetikaks",
+  "Read more": "Loe lähemalt",
+
+  "Convergence of experience, science and nature in cosmetic ingredients": "Kogemuste, teaduse ja looduse kokkupuutepunkt kosmeetikatoodete koostisosades",
+  "We bring you only the latest and most advanced ingredients for yourcosmetic and personal care applications": "Toome teile ainult uusimad ja arenenumad koostisosad teie kosmeetika- ja isikliku hoolduse rakendusteks",
+  "Explore products": "Avasta tooteid",
+  "Providing unique cosmetic specialties": "Pakume unikaalseid kosmeetilisi spetsialiteete",
+  "High performance and sustainable ingredients": "Kõrge jõudlusega ja jätkusuutlikud koostisosad",
+
+  "Product Portfolio": "Tooteportfell",
+  "From clinically substantiated plant stem cells, peptides, extracts, fermented oils and other actives up to sustainable silicone alternatives and multifunctional polymers with unique characteristics and unusual behaviour in formulations": "Alates kliiniliselt kinnitatud taimsete tüvirakkude, peptiidide, ekstraktide, fermenteeritud õlide ja teiste aktiivainete kuni jätkusuutlike silikooni alternatiivide ja multifunktsionaalsete polümeerideni unikaalsete omaduste ja ebatavalise käitumisega formulatsioonides",
+  "Categories": "Kategooriad",
+
+  "Chempha news": "Chempha uudised",
+  "View all news": "Vaata kõiki uudiseid",
+
+  "We are committed to provide you with highly efficient and sustainabl solutions that are safe for both the environment and people": "Me oleme pühendunud pakkuma teile kõrge tõhususega ja jätkusuutlikke lahendusi, mis on ohutud nii keskkonnale kui inimestele",
+  "View All Products": "Vaata kõiki tooteid",
+
+  "Sample request": "Näidise taotlus",
+
+  "Your name": "Teie nimi",
+  "Your email": "Teie e-post",
+  "Subject": "Teema",
+  "Message": "Sõnum",
+
+  "Search...": "Otsi...",
+
+  "All News": "Kõik uudised",
+
+  "Description": "Kirjeldus",
+  "All Products": "Kõik tooted",
+
+  "Search result": "Otsingu tulemus",
+  "No search results": "Tulemusi ei leitud",
+
+  "Chempha About Company": "Chempha ettevõttest",
+
+  "Chempha OÜ is an international company engaged in distribution of special and unique chemicals for production of personal care and cosmetics.": "Chempha OÜ on rahvusvaheline ettevõte, mis tegeleb eriliste ja unikaalsete kemikaalide jaotamisega isikliku hoolduse ja kosmeetikatoodete tootmiseks.",
+  "Comprehensive Solutions for Cosmetic Manufacturers": "Terviklikud lahendused kosmeetikatootjatele",
+  "About Us": "Meist",
+  "With our expertise and comprehensive customer support we have the know-how to assist you in finding, designing, and delivering the ideal solution. We closely cooperate with R&D departments, marketers and business developers to provide them with the best ingredients that will help them create products that stand out from the rest. With our wide range of offerings, we aim to help our customers reach new heights in product development and bring new life to old formulations. Our team of beauty and personal care experts can bring you only the latest, most advanced ingredients and complex solutions for your cosmetic and personal care applications.": "Oma teadmiste ja laialdase klienditoe abil oskame teid aidata leida, kujundada ja pakkuda ideaalset lahendust. Teeme tihedat koostööd teadus- ja arendusosakondade, turundajate ja ärijuhtidega, et pakkuda neile parimaid koostisosi, mis aitavad luua silmapaistvaid tooteid. Oma laia pakkumisega aitame oma klientidel jõuda tootearenduses uutesse kõrgustesse ja anda uus elu vanadele valemitele. Meie ilu- ja isikliku hoolduse ekspertide meeskond toob teile ainult uusimad, kõige arenenumad koostisosad ja keerukad lahendused teie kosmeetika- ja isikliku hoolduse rakendusteks.",
+  "Mission & Values": "Missioon ja väärtused",
+  "Mission": "Missioon",
+  "We are committed to provide our customers with highly efficient and sustainable solutions that are safe for both the environment and people.": "Oleme pühendunud pakkuma oma klientidele kõrge tõhususega ja jätkusuutlikke lahendusi, mis on ohutud nii keskkonnale kui inimestele.",
+  "Core values": "Põhiväärtused",
+  "Integrity": "Ausus",
+  "We are committed to honest, open and professionally respectful interaction and pursue the truth in our business endeavors.": "Oleme pühendunud ausale, avatud ja professionaalselt lugupidavale suhtlusele ning püüame ärilistes tegevustes tõde.",
+  "Commitment to customers": "Pühendumus klientidele",
+  "Exceeding our customers’ needs and expectations in all aspects of the product and related service is our primary responsibility.": "Meie peamine eesmärk on ületada klientide vajadused ja ootused kõigis toote ja sellega seotud teenuste aspektides.",
+  "Green chemistry": "Roheline keemia",
+  "We recognize our responsibility to contribute to a more sustainable world providing environmentally friendly chemical solutions.": "Tunnistame oma vastutust panustada jätkusuutlikumasse maailma, pakkudes keskkonnasõbralikke keemilisi lahendusi.",
+  "Teamwork": "Meeskonnatöö",
+  "The strength of our team is not only in expertise and experience but also in our ability to trust each other. Meeting our goals is not achieved by individuals but by supporting each other and enjoying cooperation as a team": "Meeskonna tugevus ei seisne ainult teadmistes ja kogemuses, vaid ka meie võimes üksteist usaldada. Eesmärkide saavutamine ei ole üksikisikute töö, vaid üksteise toetamise ja koostöö nautimise tulemus.",
+  "History": "Ajalugu",
+  "Our team’s experience in distribution of cosmetic and pharmaceutical ingredients counts decades of years. Initially the core of our staff has been active in marketing and sales of pharmaceutical and cosmetic ingredients in Ukraine where we have accumulated great expertise and have acquired a reputation of a reliable solution provider in the target markets.": "Meie meeskonna kogemus kosmeetika- ja farmaatsia koostisosade jaotamise alal ulatub aastakümnetesse. Alguses tegeles meie põhitöötajate tuumik ravimite ja kosmeetika koostisosade turunduse ja müügiga Ukrainas, kus kogusime suurt kogemust ja omandasime usaldusväärse lahenduste pakkuja maine sihtturgudel.",
+  "Thus our individual and flexible approach to customers in addition to craving for further expansion encouraged us to establish Chempha OÜ in 2021 with the purpose of providing unique specialty solutions predominantly for cosmetic and pharma customers in the Baltic States as well as in Kazakhstan, Azerbaijan, Armenia, Georgia, Kyrgyzstan, Moldova, Tajikistan, Uzbekistan, Turkmenistan.": "Seega julgustas meid oma individuaalne ja paindlik lähenemine klientidele ning soov laieneda asutama Chempha OÜ 2021. aastal eesmärgiga pakkuda unikaalseid spetsiaalseid lahendusi eelkõige kosmeetika- ja farmaatsiaklientidele Balti riikides ning Kasahstanis, Aserbaidžaanis, Armeenia, Gruusias, Kõrgõzstanis, Moldovas, Tadžikistanis, Usbekistanis ja Türkmenistanis.",
+  "Our team": "Meie meeskond",
+  "BUSINESS DEVELOPMENT DIRECTOR": "Äriarenduse direktor",
+  "Ceo": "Tegevjuht",
+  "SALES MANAGER": "Müügijuht",
+  "Formulation technical support": "Formulatsiooni tehniline tugi",
+
+  "Chempha Contact Us": "Chempha võta meiega ühendust",
+  "If you have any questions or would like to learn more about our ingredients, please don't hesitate to get in touch with us.": "Kui teil on küsimusi või soovite meie koostisosade kohta rohkem teada, ärge kartke meiega ühendust võtta.",
+  "We look forward to hearing from you!": "Ootame teie tagasisidet!",
+  "EMAIL": "E-POST",
+
+  "Chempha Partners": "Chempha Partnerid",
+  "Our partners": "Meie partnerid"
 }

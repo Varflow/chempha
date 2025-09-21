@@ -22,14 +22,15 @@
         @click="$emit('close')"
         :to="$localePath('/company')"
         class="header-menu__link"
-        >Company</NuxtLink
       >
+        {{ $t("Company") }}
+      </NuxtLink>
       <div class="header-menu__link">
         <div
           class="header-menu__link-label"
           @click="toggleCategory('ingredients')"
         >
-          Ingredients
+          {{ $t("Ingredients") }}
           <svg
             xmlns="http://www.w3.org/2000/svg"
             id="Outline"
@@ -96,7 +97,7 @@
           class="header-menu__link-label"
           @click="toggleCategory('applications')"
         >
-          Applications
+          {{ $t("Applications") }}
           <svg
             xmlns="http://www.w3.org/2000/svg"
             id="Outline"
@@ -165,20 +166,23 @@
         @click="$emit('close')"
         :to="$localePath('/partners')"
         class="header-menu__link"
-        >Partners</NuxtLink
       >
+        {{ $t("Partners") }}
+      </NuxtLink>
       <NuxtLink
         @click="$emit('close')"
         :to="$localePath('/news')"
         class="header-menu__link"
-        >News</NuxtLink
       >
+        {{ $t("News") }}
+      </NuxtLink>
       <NuxtLink
         @click="$emit('close')"
         :to="$localePath('/contact-us')"
         class="header-menu__link"
-        >Contact Us</NuxtLink
       >
+        {{ $t("Contact Us") }}
+      </NuxtLink>
     </div>
   </div>
 </template>

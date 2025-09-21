@@ -1,11 +1,11 @@
 <template>
-  <NuxtLink :to="$localePath('/company')" class="header-menu__link"
-    >Company</NuxtLink
-  >
+  <NuxtLink :to="$localePath('/company')" class="header-menu__link">
+    {{ $t("Company") }}
+  </NuxtLink>
   <div class="header-menu__link" v-if="ingredientsForView">
     <NuxtLink :to="$localePath('/ingredients')">
       <div class="header-menu__link-label">
-        Ingredients
+        {{ $t("Ingredients") }}
         <svg
           xmlns="http://www.w3.org/2000/svg"
           id="Outline"
@@ -60,7 +60,7 @@
   <div class="header-menu__link" v-if="applicationsForView">
     <NuxtLink :to="$localePath('/applications')">
       <div class="header-menu__link-label">
-        Applications
+        {{ $t("Applications") }}
         <svg
           xmlns="http://www.w3.org/2000/svg"
           id="Outline"
@@ -112,19 +112,21 @@
       </div>
     </div>
   </div>
-  <NuxtLink :to="$localePath('/partners')" class="header-menu__link"
-    >Partners</NuxtLink
-  >
-  <NuxtLink :to="$localePath('/news')" class="header-menu__link">News</NuxtLink>
-  <NuxtLink :to="$localePath('/contact-us')" class="header-menu__link"
-    >Contact Us</NuxtLink
-  >
+  <NuxtLink :to="$localePath('/partners')" class="header-menu__link">
+    {{ $t("Partners") }}
+  </NuxtLink>
+  <NuxtLink :to="$localePath('/news')" class="header-menu__link">
+    {{ $t("News") }}
+  </NuxtLink>
+  <NuxtLink :to="$localePath('/contact-us')" class="header-menu__link">
+    {{ $t("Contact us") }}
+  </NuxtLink>
 </template>
 
 <script setup>
-const { toView, getApplicationCategories, getIngredientsCategories } =
+const { toView, applicationCategories, ingredientsCategories } =
   await useCategoriesList();
 
-const ingredientsForView = toView(getIngredientsCategories());
-const applicationsForView = toView(getApplicationCategories());
+const ingredientsForView = computed(() => toView(ingredientsCategories.value));
+const applicationsForView = computed(() => toView(applicationCategories.value));
 </script>

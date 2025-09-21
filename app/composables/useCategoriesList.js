@@ -2,7 +2,9 @@ export const useCategoriesList = async () => {
   const { locale } = useLocale();
   const { find } = useStrapi();
 
-  const { data: categories } = await useAsyncData("categories", () =>
+  const dataKey = computed(() => `categories-${locale.value}`);
+
+  const { data: categories } = await useAsyncData(dataKey, () =>
     find("categories", {
       populate: {
         image: true,
@@ -12,15 +14,19 @@ export const useCategoriesList = async () => {
     })
   );
 
-  const getIngredientsCategories = () =>
-    categories.value?.data?.filter(
-      (category) => category.section === "ingredients"
-    ) || [];
+  const ingredientsCategories = computed(
+    () =>
+      categories.value?.data?.filter(
+        (category) => category.section === "ingredients"
+      ) || []
+  );
 
-  const getApplicationCategories = () =>
-    categories.value?.data?.filter(
-      (category) => category.section === "application"
-    ) || [];
+  const applicationCategories = computed(
+    () =>
+      categories.value?.data?.filter(
+        (category) => category.section === "application"
+      ) || []
+  );
 
   const toView = (collection) => {
     if (!collection) {
@@ -47,7 +53,7 @@ export const useCategoriesList = async () => {
   return {
     categories,
     toView,
-    getIngredientsCategories,
-    getApplicationCategories,
+    ingredientsCategories,
+    applicationCategories,
   };
 };
