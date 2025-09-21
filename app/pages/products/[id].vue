@@ -55,7 +55,7 @@
 <script setup>
 import Micromodal from "micromodal";
 
-const { productForView } = await useProductShow();
+const { productForView, media } = await useProductShow();
 const openSubmitModal = () => {
   Micromodal.show("submit-modal");
 };
