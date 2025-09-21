@@ -1,4 +1,5 @@
 export const usePostShow = async () => {
+  const media = useStrapiMedia();
   const { locale } = useLocale();
   const { findOne } = useStrapi();
   const route = useRoute();
@@ -17,6 +18,7 @@ export const usePostShow = async () => {
   };
 
   return {
+    media,
     postForView,
   };
 };

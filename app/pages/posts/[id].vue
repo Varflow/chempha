@@ -27,5 +27,5 @@
 </template>
 
 <script setup>
-const { postForView } = await usePostShow();
+const { postForView, media } = await usePostShow();
 </script>

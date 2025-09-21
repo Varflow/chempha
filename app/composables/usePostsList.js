@@ -21,7 +21,7 @@ export const usePostsList = async ({ limit }) => {
       posts.value?.data?.map((post) => {
         return {
           id: post.documentId,
-          image: `${media}${post.image.data?.url}`,
+          image: `${media}${post.image?.url}`,
           title: post.title,
           text: post.text,
           createdAt: new Date(post.createdAt).toLocaleDateString(),
