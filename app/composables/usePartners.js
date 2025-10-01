@@ -14,13 +14,19 @@ export const usePartnersList = async () => {
     })
   );
 
-  const partnersForView = computed(
-    () =>
+  const partnersForView = computed(() => {
+    const list =
       partners.value?.data?.map((partner) => ({
         ...partner,
         logo: `${media}${partner.logo?.url}`,
-      })) || []
-  );
+      })) || [];
+
+    const unique = Array.from(
+      new Map(list.map((item) => [item.link, item])).values()
+    );
+
+    return unique;
+  });
 
   return {
     partnersForView,
