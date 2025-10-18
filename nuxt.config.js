@@ -28,6 +28,8 @@ export default defineNuxtConfig({
     locales: [
       { code: "en", name: "English", language: "en", file: "en.json" },
       { code: "ee", name: "Estonian", language: "et-EE", file: "ee.json" },
+      { code: "lv", name: "Latvian", language: "lv-LV", file: "lv.json" },
+      { code: "lt", name: "Lithuanian", language: "lt-LT", file: "lt.json" },
     ],
   },
 

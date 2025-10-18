@@ -4,6 +4,8 @@ export const useLocale = () => {
   const localesToApi = {
     en: "en",
     ee: "et-EE",
+    lv: "lv-LV",
+    lt: "lt-LT",
   };
 
   return {
