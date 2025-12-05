@@ -142,7 +142,7 @@
       </div>
     </div>
 
-    <div class="section-team">
+    <!-- <div class="section-team">
       <div class="container">
         <div class="section-header">
           <h2 class="section-title">Our team</h2>
@@ -183,7 +183,7 @@
           </div>
         </div>
       </div>
-    </div>
+    </div> -->
   </div>
 </template>
 
