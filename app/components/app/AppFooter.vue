@@ -76,54 +76,12 @@
   </footer>
 </template>
 
-<script>
-const toView = (collection) => {
-  if (!collection) {
-    return [];
-  }
+<script setup>
+const { toView, applicationCategories, ingredientsCategories } =
+  await useCategoriesList();
 
-  return collection.map((collection) => {
-    return {
-      id: collection.documentId,
-      name: collection.Name,
-      children: !collection.pod_kategoriyas?.length
-        ? null
-        : collection.pod_kategoriyas?.map((subcategory) => {
-            return {
-              id: subcategory.documentId,
-              name: subcategory.name,
-            };
-          }),
-    };
-  });
-};
+const year = new Date().getFullYear();
 
-export default {
-  async setup() {
-    try {
-      const { find } = useStrapi();
-      const categories = await find("categories");
-
-      const ingredients = categories.data.filter(
-        (category) => category.section === "ingredients"
-      );
-      const applications = categories.data.filter(
-        (category) => category.section === "application"
-      );
-
-      const year = new Date().getFullYear();
-
-      const ingredientsForView = toView(ingredients);
-      const applicationsForView = toView(applications);
-
-      return {
-        year,
-        ingredientsForView,
-        applicationsForView,
-      };
-    } catch (error) {
-      console.log(error);
-    }
-  },
-};
+const applicationsForView = computed(() => toView(applicationCategories.value));
+const ingredientsForView = computed(() => toView(ingredientsCategories.value));
 </script>

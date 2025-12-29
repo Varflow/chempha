@@ -16,7 +16,7 @@
 
       <div class="contact-content row gy-4">
         <div class="col-12 col-lg-6">
-          <h4 class="contact-title">{{ $t("Contact Us") }}</h4>
+          <h4 class="contact-title">{{ $t("Contact us") }}</h4>
           <h5 class="contact-subtitle">
             {{ $t("We look forward to hearing from you!") }}
           </h5>
@@ -45,7 +45,7 @@
               </label>
             </div>
             <label for="message" class="form-field">
-              {{ $t("Your message") }}
+              {{ $t("Message") }}
               <textarea
                 id="message"
                 v-model="message"

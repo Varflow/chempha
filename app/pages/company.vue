@@ -107,7 +107,7 @@
             >.
             {{
               $t(
-                "The strength of our team is not only in expertise and experience but also in our ability to trust each other. Meeting our goals is not achieved by individuals but by supporting each other and enjoying cooperation as a team."
+                "The strength of our team is not only in expertise and experience but also in our ability to trust each other. Meeting our goals is not achieved by individuals but by supporting each other and enjoying cooperation as a team"
               )
             }}
           </p>

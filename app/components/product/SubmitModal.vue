@@ -1,5 +1,5 @@
 <template>
-  <AppModal id="submit-modal" title="Sample request">
+  <AppModal id="submit-modal" :title="$t('Sample request')">
     <form class="submit-modal__form" @submit.prevent="submit">
       <label class="form-field">
         {{ $t("Your name") }}
