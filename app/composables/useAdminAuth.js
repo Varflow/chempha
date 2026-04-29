@@ -1,16 +1,28 @@
 const JWT_KEY = "jwtToken";
 const FLAG_KEY = "isLoggedIn";
 
-const readJwt = () => {
-  if (!import.meta.client) return null;
-  const raw = localStorage.getItem(JWT_KEY);
-  if (!raw) return null;
+const unwrap = (raw) => {
   try {
     const parsed = JSON.parse(raw);
     return typeof parsed === "string" ? parsed : raw;
   } catch {
     return raw;
   }
+};
+
+const readJwtFromStorage = () => {
+  const raw = localStorage.getItem(JWT_KEY);
+  return raw ? unwrap(raw) : null;
+};
+
+const readJwtFromCookie = () => {
+  const match = document.cookie.match(/(?:^|;\s*)jwtToken=([^;]+)/);
+  return match ? unwrap(decodeURIComponent(match[1])) : null;
+};
+
+const readJwt = () => {
+  if (!import.meta.client) return null;
+  return readJwtFromStorage() || readJwtFromCookie();
 };
 
 export const useAdminAuth = () => {
@@ -21,14 +33,18 @@ export const useAdminAuth = () => {
     if (!import.meta.client) return;
 
     const jwt = readJwt();
-    const init = jwt
-      ? { headers: { Authorization: `Bearer ${jwt}` }, credentials: "omit" }
-      : { credentials: "include" };
+    if (!jwt) {
+      isAdmin.value = false;
+      return;
+    }
 
     try {
       const res = await fetch(
         `${config.public.strapiUrl}/admin/users/me`,
-        init
+        {
+          headers: { Authorization: `Bearer ${jwt}` },
+          credentials: "omit",
+        }
       );
       isAdmin.value = res.ok;
     } catch {
