@@ -4,12 +4,12 @@
     <Head>
       <Title>{{ $t("Ingredients") }}</Title>
       <Meta name="og:title" :content="$t('Ingredients')" />
-      <Meta name="og:image" content="/images/banners/ingredients.jpeg" />
+      <Meta name="og:image" content="/images/banners/ingredients.jpg" />
     </Head>
     <div class="container">
       <AppPageBanner
         :title="$t('Ingredients')"
-        img="/images/banners/ingredients.jpeg"
+        img="/images/banners/ingredients.jpg"
       />
 
       <div class="row categories-list gy-5">

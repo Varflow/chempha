@@ -30,7 +30,7 @@
           class="col-12 col-lg-6 company-content__image"
           data-aos="fade-right"
         >
-          <img src="/images/banners/company/company-1.jpeg" alt="" />
+          <img src="/images/banners/company/company-1.jpg" alt="" />
         </div>
 
         <div class="col-12 col-lg-6 company-content__info" data-aos="fade-left">

@@ -13,7 +13,7 @@
     <swiper-slide>
       <div class="main-banner">
         <img
-          src="/images/banners/main/banner-3.webp"
+          src="/images/banners/main/banner-3.jpg"
           alt="Banner 1"
           class="main-banner__image"
         />
@@ -46,7 +46,7 @@
     <swiper-slide>
       <div class="main-banner">
         <img
-          src="/images/banners/main/banner-2.webp"
+          src="/images/banners/main/banner-2.jpg"
           alt="Banner-2"
           class="main-banner__image"
         />
@@ -67,7 +67,7 @@
     <swiper-slide>
       <div class="main-banner">
         <img
-          src="/images/banners/main/banner-1.webp"
+          src="/images/banners/main/banner-1.jpg"
           alt="Banner-3"
           class="main-banner__image"
         />

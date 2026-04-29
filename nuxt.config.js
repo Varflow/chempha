@@ -7,6 +7,7 @@ export default defineNuxtConfig({
   runtimeConfig: {
     public: {
       mailTo: process.env.MAIL_TO,
+      strapiUrl: process.env.STRAPI_URL,
     },
   },
   site: {

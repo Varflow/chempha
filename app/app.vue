@@ -1,9 +1,15 @@
 <template>
-  <NuxtLayout>
+  <AppMaintenancePage v-if="isAdmin === false" />
+  <NuxtLayout v-else>
     <NuxtLoadingIndicator />
     <NuxtPage />
   </NuxtLayout>
 </template>
+
+<script setup>
+const { isAdmin } = useAdminAuth();
+console.log('isAdmin:', isAdmin);
+</script>
 
 <style>
 .page-enter-active,
