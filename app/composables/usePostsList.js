@@ -1,16 +1,18 @@
-export const usePostsList = async ({ limit }) => {
+export const usePostsList = async (page, pageSize) => {
   const { locale } = useLocale();
   const { find } = useStrapi();
   const media = useStrapiMedia();
 
-  const dataKey = computed(() => `posts-${locale.value}`);
+  const dataKey = computed(
+    () => `posts-page-${page.value}-size-${pageSize}-${locale.value}`
+  );
 
   const { data: posts } = await useAsyncData(dataKey, () =>
     find("novostis", {
       populate: {
         image: true,
       },
-      pagination: { limit },
+      pagination: { page: page.value, pageSize },
       locale: locale.value,
       sort: "createdAt:desc",
     })
@@ -29,7 +31,12 @@ export const usePostsList = async ({ limit }) => {
       }) || []
   );
 
+  const pageCount = computed(
+    () => posts.value?.meta?.pagination?.pageCount || 0
+  );
+
   return {
     postsForView,
+    pageCount,
   };
 };

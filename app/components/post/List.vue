@@ -18,5 +18,5 @@
 
 <script setup>
 const props = defineProps(["limit"]);
-const { postsForView } = await usePostsList({ limit: props.limit });
+const { postsForView } = await usePostsList(ref(1), props.limit);
 </script>
