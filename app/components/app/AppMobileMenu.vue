@@ -171,7 +171,7 @@
       </NuxtLink>
       <NuxtLink
         @click="$emit('close')"
-        :to="$localePath('/news')"
+        :to="$localePath('/posts')"
         class="header-menu__link"
       >
         {{ $t("News") }}

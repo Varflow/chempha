@@ -32,7 +32,16 @@
 </template>
 
 <script setup>
-const page = ref(1);
+const route = useRoute();
+const router = useRouter();
+
+const page = computed({
+  get: () => Number(route.query.page) || 1,
+  set: (value) => {
+    router.push({ query: { ...route.query, page: value } });
+  },
+});
+
 const { pageCount, postsForView: posts } = await usePostsList(page, 12);
 </script>
 

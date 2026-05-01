@@ -115,7 +115,7 @@
   <NuxtLink :to="$localePath('/partners')" class="header-menu__link">
     {{ $t("Partners") }}
   </NuxtLink>
-  <NuxtLink :to="$localePath('/news')" class="header-menu__link">
+  <NuxtLink :to="$localePath('/posts')" class="header-menu__link">
     {{ $t("News") }}
   </NuxtLink>
   <NuxtLink :to="$localePath('/contact-us')" class="header-menu__link">
