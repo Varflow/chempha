@@ -85,6 +85,29 @@
         </div>
       </div>
     </swiper-slide>
+
+    <!-- Test Banners -->
+    <swiper-slide v-for="(banner, index) in banners" :key="index">
+      <div class="main-banner">
+        <img
+          :src="banner.image"
+          :alt="`Banner-${index + 1}`"
+          class="main-banner__image"
+        />
+        <h2 class="main-banner__title">
+          {{ $t("High performance and sustainable ingredients") }}
+        </h2>
+
+        <div class="main-banner__actions">
+          <NuxtLink
+            :to="$localePath('/products')"
+            class="link-without-decoration"
+          >
+            <AppButton variant="white">{{ $t("Explore products") }}</AppButton>
+          </NuxtLink>
+        </div>
+      </div>
+    </swiper-slide>
   </swiper>
 </template>
 
@@ -104,8 +127,11 @@ export default {
 
   setup() {
     const modules = [Pagination, Navigation, Autoplay];
+    const banners = new Array(29).fill(0).map((_, index) => ({
+      image: `/images/banners/main/test/main-banner-${index + 1}.jpg`,
+    }));
 
-    return { modules };
+    return { modules, banners };
   },
 };
 </script>
