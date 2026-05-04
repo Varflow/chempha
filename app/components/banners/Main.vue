@@ -10,7 +10,7 @@
     navigation
     pagination
   >
-    <swiper-slide>
+    <!-- <swiper-slide>
       <div class="main-banner">
         <img
           src="/images/banners/main/banner-3.jpg"
@@ -84,10 +84,10 @@
           </NuxtLink>
         </div>
       </div>
-    </swiper-slide>
+    </swiper-slide> -->
 
     <!-- Test Banners -->
-    <swiper-slide v-for="(banner, index) in banners" :key="index">
+    <swiper-slide v-for="(banner, index) in renderBanners" :key="index">
       <div class="main-banner">
         <img
           :src="banner.image"
@@ -127,11 +127,22 @@ export default {
 
   setup() {
     const modules = [Pagination, Navigation, Autoplay];
+    const prereleaseBanners = new Array(6).fill(0).map((_, index) => ({
+      image: `/images/banners/main/test/main-banner-0-${(index + 1) * 10}.jpg`,
+    }));
     const banners = new Array(29).fill(0).map((_, index) => ({
       image: `/images/banners/main/test/main-banner-${index + 1}.jpg`,
     }));
 
-    return { modules, banners };
+    const renderBanners = [
+      ...prereleaseBanners,
+      ...banners,
+    ];
+
+    console.log("Render Banners:", renderBanners);
+
+
+    return { modules, renderBanners };
   },
 };
 </script>
