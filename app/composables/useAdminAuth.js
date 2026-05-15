@@ -52,5 +52,5 @@ export const useAdminAuth = () => {
     }
   };
 
-  return { isAdmin, checkAdmin, JWT_KEY, FLAG_KEY };
+  return { isAdmin: false, checkAdmin, JWT_KEY, FLAG_KEY };
 };
