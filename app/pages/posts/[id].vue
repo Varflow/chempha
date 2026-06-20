@@ -15,11 +15,15 @@
     </Head>
     <div class="container">
       <div class="col-12 col-lg-10 offset-lg-1">
-        <div class="post-page__image">
-          <img :src="`${media}${postForView.image?.url}`" />
+        <div class="row post-page__header">
+          <div class="col-12 col-lg-6 post-page__image">
+            <img :src="`${media}${postForView.image?.url}`" :alt="postForView.title" />
+          </div>
+          <div class="col-12 col-lg-6 post-page__info">
+            <div class="post-page__meta">{{ postForView.createdAt }}</div>
+            <h2 class="post-page__title">{{ postForView.title }}</h2>
+          </div>
         </div>
-        <div class="post-page__meta">{{ postForView.createdAt }}</div>
-        <h2 class="post-page__title">{{ postForView.title }}</h2>
         <div class="post-page__text" v-html="postForView.text"></div>
       </div>
     </div>
