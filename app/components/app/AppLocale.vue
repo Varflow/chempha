@@ -1,15 +1,15 @@
 <template>
   <div class="header-locales">
-    <NuxtLink :to="switchTo('en')" :replace style="text-decoration: none">
+    <NuxtLink :to="switchTo('en')" :replace class="header-locales__item" style="text-decoration: none">
       <img src="/images/flags/en.svg" alt="English" />
     </NuxtLink>
-    <NuxtLink :to="switchTo('ee')" :replace style="text-decoration: none">
+    <NuxtLink :to="switchTo('ee')" :replace class="header-locales__item" style="text-decoration: none">
       <img src="/images/flags/ee.svg" alt="Eesti" />
     </NuxtLink>
-    <NuxtLink :to="switchTo('lv')" :replace style="text-decoration: none">
+    <NuxtLink :to="switchTo('lv')" :replace class="header-locales__item" style="text-decoration: none">
       <img src="/images/flags/lv.svg" alt="Latvian" />
     </NuxtLink>
-    <NuxtLink :to="switchTo('lt')" :replace style="text-decoration: none">
+    <NuxtLink :to="switchTo('lt')" :replace class="header-locales__item" style="text-decoration: none">
       <img src="/images/flags/lt.svg" alt="Lithuanian" />
     </NuxtLink>
   </div>
